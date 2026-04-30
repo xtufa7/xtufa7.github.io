@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="0xtufa7 cyber intelligence profile">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop stop-color="#05060a"/>
+      <stop offset="0.52" stop-color="#101217"/>
+      <stop offset="1" stop-color="#1c1c1c"/>
+    </linearGradient>
+    <radialGradient id="pulse" cx="72%" cy="30%" r="55%">
+      <stop stop-color="#2d5bff" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#2d5bff" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M64 0H0v64" fill="none" stroke="#d5d8de" stroke-opacity="0.09" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#pulse)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <path d="M754 315c52-86 119-129 201-129s149 43 201 129c-52 86-119 129-201 129s-149-43-201-129Z" fill="none" stroke="#d5d8de" stroke-opacity="0.8" stroke-width="6"/>
+  <circle cx="955" cy="315" r="58" fill="#2d5bff" fill-opacity="0.84"/>
+  <circle cx="955" cy="315" r="17" fill="#fff"/>
+  <circle cx="955" cy="315" r="148" fill="none" stroke="#2d5bff" stroke-opacity="0.25" stroke-width="2"/>
+  <circle cx="955" cy="315" r="218" fill="none" stroke="#2d5bff" stroke-opacity="0.14" stroke-width="2"/>
+  <path d="M72 86h470v2H72z" fill="#2d5bff"/>
+  <text x="72" y="238" fill="#fff" font-family="Inter, Arial, sans-serif" font-size="92" font-weight="800">0xtufa7</text>
+  <text x="78" y="304" fill="#d5d8de" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700">Cyber Intelligence • OSINT • Network Security</text>
+  <text x="78" y="364" fill="#8e96a7" font-family="Inter, Arial, sans-serif" font-size="28">Defensive Monitoring • Regulatory Analysis • AI Security</text>
+  <text x="78" y="488" fill="#2d5bff" font-family="Consolas, monospace" font-size="24">DNS BEHAVIOR / OPEN-SOURCE SIGNALS / RISK DETECTION</text>
+</svg>
