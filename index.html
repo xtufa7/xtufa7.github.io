@@ -4,328 +4,141 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>0xtufa7 | Cyber Intelligence, OSINT & Network Security</title>
+
     <meta
       name="description"
       content="Personal website of 0xtufa7, focused on cyber intelligence, OSINT, defensive monitoring, network security analysis, regulatory cybersecurity, AI-assisted security systems, and creative editing."
     />
+
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://xtufa7.github.io" />
     <meta property="og:title" content="0xtufa7 | Cyber Intelligence, OSINT & Network Security" />
+
     <meta
       property="og:description"
       content="Cyber intelligence profile for 0xtufa7: OSINT, network security analysis, defensive monitoring, regulatory cybersecurity, AI security systems, and open-source security tooling."
     />
+
     <meta property="og:image" content="https://xtufa7.github.io/assets/og-image.svg" />
+
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="0xtufa7 | Cyber Intelligence, OSINT & Network Security" />
+
     <meta
       name="twitter:description"
       content="Cyber intelligence profile for 0xtufa7: OSINT, network security analysis, defensive monitoring, regulatory cybersecurity, AI security systems, and open-source security tooling."
     />
+
     <meta name="theme-color" content="#07080c" />
+
     <link rel="icon" type="image/svg+xml" href="assets/site-icon.svg" />
     <link rel="preload" href="styles.css" as="style" />
     <link rel="stylesheet" href="styles.css" />
   </head>
+
   <body>
-    <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <div class="noise-layer" aria-hidden="true"></div>
-    <div class="grid-layer" aria-hidden="true"></div>
-    <div class="beam-layer" aria-hidden="true"></div>
-
-    <header class="site-header" data-header>
-      <nav class="nav-shell" aria-label="Primary navigation">
-        <a class="brand-mark" href="#home" aria-label="0xtufa7 home">
-          <img src="assets/site-icon.svg" alt="" aria-hidden="true" />
+    <header class="site-header">
+      <nav class="nav-shell">
+        <a class="brand-mark" href="#home">
+          <img src="assets/site-icon.svg" alt="" />
           <span>0xtufa7</span>
         </a>
-
-        <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" data-nav-toggle>
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-
-        <div class="nav-links" data-nav-links></div>
-
-        <button class="lang-toggle" type="button" data-lang-toggle aria-label="Switch language">
-          <span data-current-lang>EN</span>
-          <strong>AR</strong>
-        </button>
       </nav>
     </header>
 
     <main id="main">
-      <section class="hero section-block" id="home" data-section>
-        <div class="hero-content reveal immediate">
-          <div class="terminal-label">
-            <span class="pulse-dot"></span>
-            <span data-i18n="hero.eyebrow">identity layer / cyber intelligence builder</span>
-          </div>
 
-          <h1>0xtufa7</h1>
+      <!-- HERO -->
+      <section class="hero section-block" id="home">
 
-          <p class="hero-subtitle" data-i18n="hero.subtitle">
-            Cyber Intelligence • OSINT • Network Security Analysis • Defensive & Regulatory Monitoring
-          </p>
+        <h1>0xtufa7</h1>
 
-          <p class="hero-text" data-i18n="hero.text">
-            I build systems that turn raw network, DNS, device, and open-source signals into structured intelligence:
-            context, behavior, risk, and control. The goal is not to drown in logs. The goal is to understand what is
-            happening and why it matters.
-          </p>
+        <p class="hero-subtitle">
+          Cyber Intelligence • OSINT • Domain Name System Analysis • Defensive & Regulatory Monitoring
+        </p>
 
-          <div class="hero-actions" aria-label="Primary actions">
-            <a class="button button-primary" href="#godeye">
-              <span class="button-icon" data-icon="projects"></span>
-              <span data-i18n="buttons.projects">View Projects</span>
-            </a>
-            <a class="button" href="#osint">
-              <span class="button-icon" data-icon="radar"></span>
-              <span data-i18n="buttons.osint">OSINT Profile</span>
-            </a>
-            <a class="button" href="https://github.com/xtufa7" target="_blank" rel="noreferrer">
-              <span class="button-icon" data-icon="github"></span>
-              <span data-i18n="buttons.github">GitHub</span>
-            </a>
-            <a class="button" href="#contact">
-              <span class="button-icon" data-icon="mail"></span>
-              <span data-i18n="buttons.contact">Contact</span>
-            </a>
-          </div>
+        <p class="hero-text">
+          I build systems that turn network, Domain Name System, device, and open-source signals into structured intelligence:
+          context, behavior, risk, and control.
 
-          <div class="hero-intel-strip" data-intel-strip></div>
+          The goal is not to drown in logs. The goal is to understand what is happening and why it matters.
+        </p>
+
+        <div class="visual-readouts">
+          <span>DOMAIN SIGNALS / LIVE</span>
+          <span>OSINT MAP / ACTIVE</span>
+          <span>AI RELAY / READY</span>
         </div>
 
-        <div class="hero-visual reveal immediate" aria-label="Animated cyber intelligence radar">
-          <div class="visual-frame">
-            <canvas id="radarCanvas" width="560" height="560"></canvas>
-            <div class="eye-core" aria-hidden="true">
-              <div class="eye-outline"></div>
-              <div class="eye-pupil"></div>
-              <div class="eye-crosshair"></div>
-              <div class="scan-line"></div>
-            </div>
-            <div class="visual-readouts" aria-hidden="true">
-              <span data-i18n="readouts.dns">DNS SIG / LIVE</span>
-              <span data-i18n="readouts.osint">OSINT MAP / ACTIVE</span>
-              <span data-i18n="readouts.ai">AI RELAY / READY</span>
-            </div>
-          </div>
-        </div>
       </section>
 
-      <section class="section-block" id="about" data-section>
-        <div class="section-heading">
-          <span class="eyebrow" data-i18n="about.eyebrow">profile</span>
-          <h2 data-i18n="about.title">About 0xtufa7</h2>
-        </div>
+      <!-- ABOUT -->
+      <section>
 
-        <div class="about-grid reveal">
-          <div class="copy-panel">
-            <p data-i18n="about.p1">
-              I focus on cyber intelligence, OSINT, network behavior analysis, defensive security, and regulatory-style
-              monitoring. My strongest angle is analysis: connecting technical signals to behavior, risk, identity, and
-              practical decisions.
-            </p>
-            <p data-i18n="about.p2">
-              I work across DNS visibility, device activity, domain classification, monitoring dashboards, AI-assisted
-              interpretation, and controlled access systems. I treat logs as evidence streams, not just technical records.
-            </p>
-            <p data-i18n="about.p3">
-              I also bring a visual editing background into the way I design interfaces. Cyber dashboards should be fast,
-              sharp, readable, and cinematic without becoming childish or fake.
-            </p>
-          </div>
+        <h2>About</h2>
 
-          <aside class="signal-panel" aria-label="Profile signals">
-            <div>
-              <span class="metric-value">OSINT</span>
-              <span class="metric-label" data-i18n="metrics.osint">open-source intelligence</span>
-            </div>
-            <div>
-              <span class="metric-value">DNS</span>
-              <span class="metric-label" data-i18n="metrics.dns">network behavior layer</span>
-            </div>
-            <div>
-              <span class="metric-value">AI</span>
-              <span class="metric-label" data-i18n="metrics.ai">analysis accelerator</span>
-            </div>
-            <div>
-              <span class="metric-value">4Y</span>
-              <span class="metric-label" data-i18n="metrics.edit">motion editing experience</span>
-            </div>
-          </aside>
-        </div>
+        <p>
+          I focus on cyber intelligence, OSINT, network behavior analysis, defensive security, and regulatory-style monitoring.
+          My strongest angle is analysis: connecting technical signals to behavior, risk, identity, and practical decisions.
+        </p>
+
+        <p>
+          I work across Domain Name System analysis, device activity, domain classification, monitoring dashboards,
+          AI-assisted interpretation, and controlled access systems. I treat logs as evidence streams, not just technical records.
+        </p>
+
       </section>
 
-      <section class="section-block" id="osint" data-section>
-        <div class="section-heading">
-          <span class="eyebrow" data-i18n="osint.eyebrow">intelligence discipline</span>
-          <h2 data-i18n="osint.title">OSINT & Network Intelligence</h2>
-        </div>
+      <!-- GODEYE -->
+      <section>
 
-        <div class="card-grid reveal" data-osint></div>
+        <h2>GodEye Ecosystem</h2>
+
+        <p>
+          GodEye is a private project focused on device and network intelligence.
+
+          It is designed to make technical activity easier to understand: what happened, which device was involved,
+          and whether the activity was normal, background, or worth attention.
+        </p>
+
+        <p>Private / In development</p>
+
       </section>
 
-      <section class="section-block" id="security" data-section>
-        <div class="section-heading">
-          <span class="eyebrow" data-i18n="security.eyebrow">security posture</span>
-          <h2 data-i18n="security.title">Analytical Security, Defensive Control</h2>
-        </div>
+      <!-- OPEN SOURCE -->
+      <section>
 
-        <div class="security-layout reveal">
-          <article class="copy-panel accent-panel">
-            <h3 data-i18n="security.cardTitle">Balanced Security Thinking</h3>
-            <p data-i18n="security.p1">
-              I use adversarial security thinking as a validation method: review exposure, test assumptions, and convert
-              findings into stronger monitoring, filtering, and control.
-            </p>
-            <p data-i18n="security.p2">
-              The core focus remains defensive and regulatory: visibility, policy-aware filtering, risk explanation,
-              network behavior baselines, and systems that make suspicious activity easier to understand.
-            </p>
-          </article>
+        <h2>Open-Source Direction</h2>
 
-          <div class="ops-grid" data-security></div>
-        </div>
+        <p>
+          I am building toward open-source tools that support cybersecurity workflows:
+          Domain Name System triage, domain classification, activity interpretation, network visibility, OSINT pivots, and clean reporting.
+        </p>
+
       </section>
 
-      <section class="section-block flagship" id="godeye" data-section>
-        <div class="section-heading">
-          <span class="eyebrow" data-i18n="godeye.eyebrow">flagship project</span>
-          <h2>GodEye Ecosystem</h2>
+      <!-- CONTACT -->
+      <section>
+
+        <h2>Contact</h2>
+
+        <div class="contact-icons">
+          <a href="https://github.com/xtufa7" target="_blank"></a>
+          <a href="https://x.com/yourprofile" target="_blank"></a>
+          <a href="https://instagram.com/yourprofile" target="_blank"></a>
+          <a href="mailto:your@email.com"></a>
         </div>
 
-        <div class="project-layout reveal">
-          <article class="project-card">
-            <div class="project-card-top">
-              <span class="status-badge warning" data-i18n="godeye.status">Private / In development</span>
-              <span class="status-badge" data-i18n="godeye.role">Founder & Builder</span>
-              <span class="status-badge" data-i18n="godeye.category">Cyber Intelligence / DNS Monitoring / AI Security</span>
-            </div>
-
-            <h3 data-i18n="godeye.title">GodEye Ecosystem</h3>
-            <p data-i18n="godeye.description">
-              GodEye is a private project focused on DNS and device intelligence. It is built around NextDNS logs and
-              designed to make them easier to understand: what happened, which device was involved, and whether the
-              activity was normal, background, or worth attention.
-            </p>
-            <p class="muted-note" data-i18n="godeye.note">
-              Private / In development. Public documentation and repository access will be published when the system is
-              ready.
-            </p>
-          </article>
-
-          <div class="feature-matrix" data-godeye-features></div>
-        </div>
       </section>
 
-      <section class="section-block" id="future" data-section>
-        <div class="section-heading">
-          <span class="eyebrow" data-i18n="future.eyebrow">future build</span>
-          <h2 data-i18n="future.title">Full Mobile Oversight System</h2>
-        </div>
-
-        <div class="future-panel reveal">
-          <div>
-            <h3 data-i18n="future.cardTitle">Privacy-aware mobile supervision and security monitoring</h3>
-            <p data-i18n="future.description">
-              A future system concept for complete mobile visibility: device activity signals, network behavior, content
-              risk indicators, profile-based controls, alerting, and clean reporting. The direction is serious,
-              security-focused, and designed around responsible monitoring.
-            </p>
-          </div>
-          <div class="future-points" data-future></div>
-        </div>
-      </section>
-
-      <section class="section-block" id="creative" data-section>
-        <div class="section-heading">
-          <span class="eyebrow" data-i18n="creative.eyebrow">visual craft</span>
-          <h2 data-i18n="creative.title">Motion Editing Background</h2>
-        </div>
-
-        <div class="creative-grid reveal" data-creative></div>
-      </section>
-
-      <section class="section-block" id="opensource" data-section>
-        <div class="section-heading">
-          <span class="eyebrow" data-i18n="opensource.eyebrow">builder direction</span>
-          <h2 data-i18n="opensource.title">Open-Source Security Tools</h2>
-        </div>
-
-        <div class="presence-panel reveal">
-          <div>
-            <span class="eyebrow" data-i18n="opensource.label">public utility mindset</span>
-            <h3 data-i18n="opensource.cardTitle">Tools that help analysts move faster</h3>
-            <p data-i18n="opensource.description">
-              I am building toward open-source tools that support cybersecurity workflows: DNS triage, domain
-              classification, log interpretation, network visibility, OSINT pivots, and clean reporting.
-            </p>
-          </div>
-          <div class="presence-actions">
-            <a class="button button-primary" href="https://github.com/xtufa7" target="_blank" rel="noreferrer">
-              <span class="button-icon" data-icon="github"></span>
-              <span data-i18n="buttons.githubProfile">GitHub Profile</span>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section class="section-block" id="stack" data-section>
-        <div class="section-heading">
-          <span class="eyebrow" data-i18n="stack.eyebrow">technical surface</span>
-          <h2 data-i18n="stack.title">Technical Stack</h2>
-        </div>
-
-        <div class="stack-grid reveal" data-stack></div>
-      </section>
-
-      <section class="section-block philosophy" id="philosophy" data-section>
-        <div class="section-heading">
-          <span class="eyebrow" data-i18n="philosophy.eyebrow">operating model</span>
-          <h2 data-i18n="philosophy.title">How I Think</h2>
-        </div>
-
-        <div class="philosophy-grid reveal">
-          <div class="copy-panel">
-            <p data-i18n="philosophy.text">
-              Logs alone are not intelligence. Intelligence begins when raw events are connected to context, timing,
-              identity, behavior, and risk. The best systems do more than show data: they explain what changed, why it
-              matters, and what should be watched next.
-            </p>
-          </div>
-
-          <div class="approach-list" data-approach></div>
-        </div>
-      </section>
-
-      <section class="section-block" id="roadmap" data-section>
-        <div class="section-heading">
-          <span class="eyebrow" data-i18n="roadmap.eyebrow">project trajectory</span>
-          <h2 data-i18n="roadmap.title">Roadmap</h2>
-        </div>
-
-        <div class="timeline reveal" data-roadmap></div>
-      </section>
-
-      <section class="section-block" id="contact" data-section>
-        <div class="section-heading">
-          <span class="eyebrow" data-i18n="contact.eyebrow">contact surface</span>
-          <h2 data-i18n="contact.title">Contact</h2>
-        </div>
-
-        <div class="contact-grid reveal" data-contact></div>
-      </section>
     </main>
 
     <footer class="site-footer">
-      <p data-i18n="footer.built">Built by 0xtufa7</p>
-      <p data-i18n="footer.tagline">Cyber Intelligence • OSINT • Defensive Monitoring • AI Security Systems</p>
+      <p>Built by 0xtufa7</p>
+      <p>Cyber Intelligence • OSINT • Defensive Monitoring • AI Security Systems</p>
     </footer>
 
-    <script src="script.js" defer></script>
   </body>
 </html>
