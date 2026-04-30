@@ -1,8 +1,22 @@
-# 0xTuffa7 Portfolio
+# Cyber Intelligence Portfolio
 
-Premium single-page personal website for **0xTuffa7 / xtufa7**, focused on defensive cybersecurity, regulatory monitoring, DNS intelligence, AI-assisted security systems, and the private GodEye project.
+Premium bilingual single-page portfolio for a cyber intelligence builder. The site is designed for GitHub Pages and works without a build step, external icon libraries, paid services, or runtime dependencies.
 
-## Structure
+## What It Includes
+
+- English and Arabic interface with automatic browser-language detection.
+- Manual language switcher.
+- Cyber intelligence and OSINT positioning.
+- Defensive, regulatory, and network-security analysis sections.
+- Flagship private project section.
+- Future mobile oversight system concept.
+- Open-source security tooling direction.
+- Motion-editing / visual craft section.
+- Animated radar, particle background, sharp dashboard UI, sticky navigation, mobile menu, and active section tracking.
+- Local inline SVG icons and local SVG metadata assets.
+- SEO and OpenGraph metadata.
+
+## File Structure
 
 ```text
 .
@@ -12,14 +26,13 @@ Premium single-page personal website for **0xTuffa7 / xtufa7**, focused on defen
 ├── assets/
 │   ├── favicon.svg
 │   └── og-image.svg
-└── .nojekyll
+├── .nojekyll
+└── README.md
 ```
 
 ## Run Locally
 
-Because this site is dependency-free, you can open `index.html` directly in a browser.
-
-For a local server:
+Open `index.html` directly in a browser, or serve the folder locally:
 
 ```powershell
 python -m http.server 4173
@@ -33,26 +46,34 @@ http://localhost:4173
 
 ## Deploy to GitHub Pages
 
-1. Create or use the repository named `0xtufa7.github.io`.
-2. Add these files to the repository root.
+For a user/organization GitHub Pages site:
+
+1. Create a public repository named `<username>.github.io`.
+2. Place these files in the repository root.
 3. Commit and push to the default branch.
-4. In GitHub, open **Settings > Pages**.
-5. Set the source to deploy from the default branch root.
-6. Visit `https://0xtufa7.github.io`.
+4. Open **Settings > Pages** in GitHub.
+5. Select **Deploy from branch**.
+6. Choose the default branch and `/ root`.
+7. Wait for the Pages deployment to finish.
 
-## Editing Links
+## Customization
 
-Update public profile links in `index.html` and contact values in `script.js`.
+Edit public profile links and contact surfaces in `script.js`:
 
-Current configured links:
+```js
+const socialLinks = {
+  github: "...",
+  x: "...",
+  website: "...",
+  email: "mailto:...",
+};
+```
 
-- GitHub profile: `https://github.com/xtufa7`
-- Website: `https://0xtufa7.github.io`
-- GodEye repository: marked as coming soon / private
+Most bilingual content also lives in `script.js` inside the `content.en` and `content.ar` objects.
 
-## Notes
+## Technical Notes
 
-- No external icon libraries.
-- No paid services.
-- No build step required.
-- Includes responsive layout, sticky navigation, active section highlighting, animated radar/eye visual, roadmap timeline, skill chips, and SEO/OpenGraph metadata.
+- No React, Vite, npm install, CDN, or icon dependency is required.
+- `.nojekyll` is included so GitHub Pages serves the site as plain static files.
+- The project is intentionally static for speed, resilience, and easy deployment.
+- Animations respect `prefers-reduced-motion`.
