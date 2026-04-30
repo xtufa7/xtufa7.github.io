@@ -1,9 +1,11 @@
+const contactEmail = "tufa7shaml@gmail.com";
+
 const socialLinks = {
   github: "https://github.com/xtufa7",
   x: "https://x.com/0xtufa7",
   instagram: "https://instagram.com/_bb5bb",
   website: "https://xtufa7.github.io",
-  email: "mailto:tufa7shaml@gmail.com",
+  email: `mailto:${contactEmail}`,
 };
 
 const iconSvg = {
@@ -44,17 +46,17 @@ const content = {
       ["about", "About"],
       ["osint", "OSINT"],
       ["security", "Security"],
-      ["godeye", "Echosystem"],
+      ["godeye", "Ecosystem"],
       ["future", "Future"],
       ["creative", "Editing"],
       ["stack", "Stack"],
       ["contact", "Contact"],
     ],
     hero: {
-      eyebrow: "identity layer / cyber intelligence builder",
-      subtitle: "Cyber Intelligence • OSINT • Network Security Analysis • Defensive & Regulatory Monitoring",
+      eyebrow: "cyber intelligence / monitoring systems",
+      subtitle: "Cyber Intelligence • OSINT • Network Security Analysis • Defensive Monitoring",
       text:
-        "I build systems that turn raw network, DNS, device, and open-source signals into structured intelligence: context, behavior, risk, and control. The goal is not to drown in logs. The goal is to understand what is happening and why it matters.",
+        "I build tools that make network, DNS, device, and open-source signals easier to read. My focus is practical visibility: what happened, where it came from, which device was involved, and whether it needs attention.",
     },
     buttons: {
       projects: "View Projects",
@@ -68,16 +70,16 @@ const content = {
       osint: "OSINT MAP / ACTIVE",
       ai: "AI RELAY / READY",
     },
-    intelStrip: ["DNS behavior", "OSINT pivots", "Network analysis", "Regulatory monitoring"],
+    intelStrip: ["DNS behavior", "OSINT pivots", "Network analysis", "Defensive monitoring"],
     about: {
       eyebrow: "profile",
       title: "About 0xtufa7",
       p1:
-        "I focus on cyber intelligence, OSINT, network behavior analysis, defensive security, and regulatory-style monitoring. My strongest angle is analysis: connecting technical signals to behavior, risk, identity, and practical decisions.",
+        "I focus on cyber intelligence, OSINT, network behavior analysis, defensive security, and monitoring workflows. My strongest angle is analysis: connecting technical signals to behavior, context, and practical decisions.",
       p2:
-        "I work across DNS visibility, device activity, domain classification, monitoring dashboards, AI-assisted interpretation, and controlled access systems. I treat logs as evidence streams, not just technical records.",
+        "I work with DNS visibility, device activity, domain classification, monitoring dashboards, and AI-assisted interpretation. I treat logs as evidence streams, not just technical records.",
       p3:
-        "I also bring a visual editing background into the way I design interfaces. Cyber dashboards should be fast, sharp, readable, and cinematic without becoming childish or fake.",
+        "My editing background also shapes the way I design interfaces. Security tools should be sharp, readable, and fast without losing clarity.",
     },
     metrics: {
       osint: "open-source intelligence",
@@ -94,19 +96,19 @@ const content = {
         title: "Username & Identity Pivots",
         icon: "eye",
         description:
-          "Connecting public usernames, profile signals, platform traces, and timing patterns into clean investigative leads.",
+          "Connecting public usernames, profile signals, platform traces, and timing patterns into useful investigative leads.",
       },
       {
         title: "Domain & DNS Reconnaissance",
         icon: "nodes",
         description:
-          "Reading domains as infrastructure signals: DNS trails, hosting context, categories, risk levels, and behavioral history.",
+          "Reading domains as infrastructure signals: DNS trails, hosting context, categories, reputation, and behavioral history.",
       },
       {
         title: "Network Signal Analysis",
         icon: "radar",
         description:
-          "Separating normal background traffic from meaningful user-driven activity, suspicious patterns, and policy violations.",
+          "Separating normal background traffic from meaningful user activity, unusual patterns, and policy-related events.",
       },
       {
       title: "Public Signal Review",
@@ -118,13 +120,13 @@ const content = {
         title: "Intelligence Reporting",
         icon: "projects",
         description:
-          "Turning raw findings into readable reports with confidence levels, context, evidence, and practical next steps.",
+          "Turning findings into readable notes with confidence, context, evidence, and practical next steps.",
       },
       {
         title: "AI-assisted Triage",
         icon: "system",
         description:
-          "Using AI to summarize domains, classify activity, reduce noise, and explain behavior without replacing analyst judgment.",
+          "Using AI to summarize domains, classify activity, reduce noise, and support analyst judgment.",
       },
     ],
     security: {
@@ -132,9 +134,9 @@ const content = {
       title: "Analytical Security, Defensive Control",
       cardTitle: "Balanced Security Thinking",
       p1:
-        "I use adversarial security thinking as a validation method: review exposure, test assumptions, and convert findings into stronger monitoring, filtering, and control.",
+        "I use adversarial thinking to validate assumptions: review exposure, test weak points, and turn findings into better monitoring and control.",
       p2:
-        "The core focus remains defensive and regulatory: visibility, policy-aware filtering, risk explanation, network behavior baselines, and systems that make suspicious activity easier to understand.",
+        "The main focus remains defensive: visibility, policy-aware filtering, risk explanation, network behavior baselines, and systems that make unusual activity easier to understand.",
     },
     securityPoints: [
       "Defensive monitoring and visibility",
@@ -146,25 +148,25 @@ const content = {
     ],
     godeye: {
       eyebrow: "flagship project",
-      status: "Private / In Development",
+      status: "Private / In development",
       role: "Founder & Builder",
       category: "Cyber Intelligence / DNS Monitoring / AI Security",
-      title: "GodEye Echosystem",
+      title: "GodEye Ecosystem",
       description:
-        "GodEye Echosystem is a private cyber intelligence monitoring concept designed to turn network and DNS activity into meaningful behavioral and security insight. It focuses on device visibility, domain analysis, activity classification, AI-assisted interpretation, and privacy-aware control.",
+        "GodEye is a private project focused on DNS and device intelligence. It is built around NextDNS logs and designed to make them easier to understand. The goal is to show what happened, which device was involved, and whether the activity was normal, background, or worth attention.",
       note:
-        "GodEye Echosystem is private and in development. Public documentation and repository access will be published when the system is ready.",
+        "Private / In development. Public documentation and repository access will be published when the system is ready.",
     },
     godeyeFeatures: [
-      "DNS and security log ingestion",
+      "NextDNS log ingestion",
       "Device-based activity monitoring",
       "IPv4 / IPv6 identity tracking",
       "Live log streaming",
       "Domain classification",
       "Background vs active usage detection",
       "AI domain analysis",
-      "Priority activity highlighting",
-      "Policy and content-risk indicators",
+      "Activity review states",
+      "Policy and content indicators",
       "Sleep mode monitoring",
       "SQLite local persistence",
       "Privacy mode for screenshots",
@@ -177,12 +179,12 @@ const content = {
       title: "Full Mobile Oversight System",
       cardTitle: "Privacy-aware mobile supervision and security monitoring",
       description:
-        "A future system concept for complete mobile visibility: device activity signals, network behavior, content risk indicators, profile-based controls, alerting, and clean reporting. The direction is serious, security-focused, and designed around responsible monitoring.",
+        "A future system concept for responsible mobile visibility: device activity signals, network behavior, content indicators, profile-based controls, alerts, and clean reporting.",
     },
     futurePoints: [
       "Mobile network activity visibility",
       "App and profile-based controls",
-      "Content-risk indicators",
+      "Content indicators",
       "Device protection workflows",
       "Privacy mode and clean reports",
       "Security alerts with context",
@@ -220,7 +222,7 @@ const content = {
       label: "public utility mindset",
       cardTitle: "Tools that help analysts move faster",
       description:
-        "I am building toward open-source tools that support cybersecurity workflows: DNS triage, domain classification, log interpretation, network visibility, OSINT pivots, and clean reporting.",
+        "I am building toward open-source tools that support practical cybersecurity workflows: DNS triage, domain classification, log interpretation, network visibility, OSINT pivots, and reporting.",
     },
     stack: {
       eyebrow: "technical surface",
@@ -309,7 +311,7 @@ const content = {
       title: "Roadmap",
     },
     roadmapItems: [
-      "Stable Android native build for GodEye Echosystem",
+      "Stable Android native build for GodEye Ecosystem",
       "Better background collection",
       "Larger local log storage",
       "Smarter domain learning",
@@ -321,14 +323,13 @@ const content = {
     ],
     contact: {
       eyebrow: "contact surface",
-      title: "Contact",
+      title: "Contact Me",
     },
     contacts: [
-      { label: "GitHub", value: "xtufa7", href: socialLinks.github, icon: "github" },
-      { label: "X / Twitter", value: "@0xtufa7", href: socialLinks.x, icon: "x" },
-      { label: "Email", value: "tufa7shaml@gmail.com", href: socialLinks.email, icon: "mail" },
-      { label: "Website", value: "xtufa7.github.io", href: socialLinks.website, icon: "website" },
-      { label: "Instagram", value: "_bb5bb", href: socialLinks.instagram, icon: "instagram" },
+      { label: "GitHub", href: socialLinks.github, icon: "github" },
+      { label: "X / Twitter", href: socialLinks.x, icon: "x" },
+      { label: "Instagram", href: socialLinks.instagram, icon: "instagram" },
+      { label: "Email", href: socialLinks.email, icon: "mail" },
     ],
     footer: {
       built: "Built by 0xtufa7",
@@ -345,17 +346,17 @@ const content = {
       ["about", "نبذة"],
       ["osint", "OSINT"],
       ["security", "الأمن"],
-      ["godeye", "Echosystem"],
+      ["godeye", "Ecosystem"],
       ["future", "المستقبل"],
       ["creative", "المونتاج"],
       ["stack", "المهارات"],
       ["contact", "تواصل"],
     ],
     hero: {
-      eyebrow: "هوية رقمية / بناء أنظمة استخبارات سيبرانية",
-      subtitle: "استخبارات سيبرانية • OSINT • تحليل أمن الشبكات • مراقبة دفاعية ورقابية",
+      eyebrow: "استخبارات سيبرانية / أنظمة مراقبة",
+      subtitle: "استخبارات سيبرانية • OSINT • تحليل أمن الشبكات • مراقبة دفاعية",
       text:
-        "أبني أنظمة تحوّل إشارات الشبكات و DNS والأجهزة والمصادر المفتوحة إلى استخبارات منظمة: سياق، سلوك، مخاطر، وتحكم. الهدف ليس الغرق في السجلات، بل فهم ما يحدث ولماذا يهم.",
+        "أبني أدوات تجعل إشارات الشبكات و DNS والأجهزة والمصادر المفتوحة أسهل للفهم. تركيزي على الرؤية العملية: ماذا حدث، من أين أتى، أي جهاز كان ضمن الحدث، وهل يحتاج إلى متابعة.",
     },
     buttons: {
       projects: "عرض المشاريع",
@@ -369,16 +370,16 @@ const content = {
       osint: "خريطة OSINT / نشطة",
       ai: "AI RELAY / جاهز",
     },
-    intelStrip: ["سلوك DNS", "محاور OSINT", "تحليل الشبكات", "مراقبة رقابية"],
+    intelStrip: ["سلوك DNS", "محاور OSINT", "تحليل الشبكات", "مراقبة دفاعية"],
     about: {
       eyebrow: "الملف",
       title: "نبذة عن 0xtufa7",
       p1:
-        "أركز على الاستخبارات السيبرانية، OSINT، تحليل سلوك الشبكات، الأمن الدفاعي، والمراقبة الرقابية. أقوى زاوية عندي هي التحليل: ربط الإشارات التقنية بالسلوك والمخاطر والهوية والقرار العملي.",
+        "أركز على الاستخبارات السيبرانية، OSINT، تحليل سلوك الشبكات، الأمن الدفاعي، وسير عمل المراقبة. أقوى زاوية عندي هي التحليل: ربط الإشارات التقنية بالسلوك والسياق والقرار العملي.",
       p2:
-        "أعمل على رؤية DNS، نشاط الأجهزة، تصنيف النطاقات، لوحات المراقبة، التفسير المدعوم بالذكاء الاصطناعي، وأنظمة التحكم بالوصول. أتعامل مع السجلات كمسارات أدلة وليست مجرد بيانات تقنية.",
+        "أعمل على رؤية DNS، نشاط الأجهزة، تصنيف النطاقات، لوحات المراقبة، والتفسير المدعوم بالذكاء الاصطناعي. أتعامل مع السجلات كمسارات أدلة وليست مجرد بيانات تقنية.",
       p3:
-        "أحمل أيضا خلفية مونتاج بصري تؤثر على طريقة تصميمي للواجهات. لوحة الأمن السيبراني يجب أن تكون سريعة، حادة، واضحة، وسينمائية بدون مبالغة أو مظهر مزيف.",
+        "خلفيتي في المونتاج تؤثر أيضا على طريقة تصميمي للواجهات. أدوات الأمن يجب أن تكون حادة، واضحة، وسريعة بدون فقدان البساطة.",
     },
     metrics: {
       osint: "استخبارات المصادر المفتوحة",
@@ -395,19 +396,19 @@ const content = {
         title: "ربط الهويات وأسماء المستخدمين",
         icon: "eye",
         description:
-          "ربط أسماء المستخدمين العامة، إشارات الحسابات، آثار المنصات، وأنماط التوقيت لتحويلها إلى خيوط تحقيق مرتبة.",
+          "ربط أسماء المستخدمين العامة، إشارات الحسابات، آثار المنصات، وأنماط التوقيت لتحويلها إلى خيوط مفيدة للتحليل.",
       },
       {
         title: "استطلاع النطاقات و DNS",
         icon: "nodes",
         description:
-          "قراءة النطاقات كبنية تحتية: آثار DNS، سياق الاستضافة، التصنيف، مستوى الخطر، والتاريخ السلوكي.",
+          "قراءة النطاقات كبنية تحتية: آثار DNS، سياق الاستضافة، التصنيف، السمعة، والتاريخ السلوكي.",
       },
       {
         title: "تحليل إشارات الشبكة",
         icon: "radar",
         description:
-          "فصل الترافيك الخلفي الطبيعي عن النشاط البشري المهم، الأنماط المشبوهة، ومخالفات السياسة.",
+          "فصل الترافيك الخلفي الطبيعي عن النشاط المهم، الأنماط غير المعتادة، والأحداث المرتبطة بالسياسات.",
       },
       {
         title: "مراجعة الإشارات العامة",
@@ -419,13 +420,13 @@ const content = {
         title: "كتابة التقارير الاستخباراتية",
         icon: "projects",
         description:
-          "تحويل النتائج الخام إلى تقارير واضحة فيها مستوى ثقة، سياق، أدلة، وخطوات عملية تالية.",
+          "تحويل النتائج إلى ملاحظات واضحة فيها مستوى ثقة، سياق، أدلة، وخطوات عملية تالية.",
       },
       {
         title: "فرز مدعوم بالذكاء الاصطناعي",
         icon: "system",
         description:
-          "استخدام الذكاء الاصطناعي لتلخيص النطاقات، تصنيف النشاط، تقليل الضوضاء، وشرح السلوك بدون استبدال حكم المحلل.",
+          "استخدام الذكاء الاصطناعي لتلخيص النطاقات، تصنيف النشاط، تقليل الضوضاء، ودعم حكم المحلل.",
       },
     ],
     security: {
@@ -433,9 +434,9 @@ const content = {
       title: "تحليل أمني، تحكم دفاعي",
       cardTitle: "تفكير أمني متوازن",
       p1:
-        "أستخدم التفكير الأمني الخصومي كطريقة تحقق: مراجعة الظهور العام، اختبار الافتراضات، ثم تحويل النتائج إلى مراقبة وفلترة وتحكم أقوى.",
+        "أستخدم التفكير الأمني الخصومي للتحقق من الافتراضات: مراجعة الظهور العام، اختبار نقاط الضعف، ثم تحويل النتائج إلى مراقبة وتحكم أفضل.",
       p2:
-        "التركيز الأساسي يبقى دفاعيا ورقابيا: رؤية واضحة، فلترة مبنية على سياسة، شرح المخاطر، خطوط أساس لسلوك الشبكة، وأنظمة تجعل النشاط المشبوه أسهل للفهم.",
+        "التركيز الأساسي يبقى دفاعيا: رؤية واضحة، فلترة مبنية على سياسة، شرح المخاطر، خطوط أساس لسلوك الشبكة، وأنظمة تجعل النشاط غير المعتاد أسهل للفهم.",
     },
     securityPoints: [
       "مراقبة دفاعية ورؤية تشغيلية",
@@ -450,22 +451,22 @@ const content = {
       status: "خاص / قيد التطوير",
       role: "المؤسس والباني",
       category: "استخبارات سيبرانية / مراقبة DNS / أمن AI",
-      title: "GodEye Echosystem",
+      title: "GodEye Ecosystem",
       description:
-        "GodEye Echosystem هو تصور خاص لمنظومة مراقبة استخباراتية سيبرانية مصممة لتحويل نشاط الشبكة و DNS إلى رؤى سلوكية وأمنية مفهومة. يركز على رؤية الأجهزة، تحليل النطاقات، تصنيف النشاط، التفسير المدعوم بالذكاء الاصطناعي، والتحكم الواعي بالخصوصية.",
+        "GodEye هو مشروع خاص يركز على استخبارات DNS والأجهزة. يعتمد على سجلات NextDNS ويهدف إلى جعلها أسهل للفهم: ماذا حدث، أي جهاز كان ضمن الحدث، وهل كان النشاط طبيعيا أو خلفيا أو يحتاج إلى انتباه.",
       note:
-        "GodEye Echosystem مشروع خاص وقيد التطوير. سيتم نشر التوثيق والوصول للمستودع عندما يكون النظام جاهزا.",
+        "خاص / قيد التطوير. سيتم نشر التوثيق والوصول للمستودع عندما يكون النظام جاهزا.",
     },
     godeyeFeatures: [
-      "استيراد سجلات DNS والأمان",
+      "استيراد سجلات NextDNS",
       "مراقبة النشاط حسب الجهاز",
       "تتبع هوية IPv4 / IPv6",
       "بث مباشر للسجلات",
       "تصنيف النطاقات",
       "تمييز الخلفي عن النشاط الفعلي",
       "تحليل النطاقات بالذكاء الاصطناعي",
-      "إبراز النشاط عالي الأولوية",
-      "مؤشرات مخاطر المحتوى والسياسات",
+      "حالات مراجعة النشاط",
+      "مؤشرات المحتوى والسياسات",
       "مراقبة وضع النوم",
       "تخزين محلي SQLite",
       "وضع خصوصية للسكرينشوت",
@@ -478,12 +479,12 @@ const content = {
       title: "نظام رقابة كامل للجوال",
       cardTitle: "مراقبة وحماية جوال واعية بالخصوصية",
       description:
-        "تصور مستقبلي لنظام يوفر رؤية كاملة للجوال: إشارات نشاط الجهاز، سلوك الشبكة، مؤشرات مخاطر المحتوى، تحكم حسب البروفايل، تنبيهات، وتقارير نظيفة. الاتجاه جاد وأمني ومصمم حول المراقبة المسؤولة.",
+        "تصور مستقبلي لنظام يوفر رؤية مسؤولة للجوال: إشارات نشاط الجهاز، سلوك الشبكة، مؤشرات المحتوى، تحكم حسب البروفايل، تنبيهات، وتقارير نظيفة.",
     },
     futurePoints: [
       "رؤية لنشاط شبكة الجوال",
       "تحكم حسب التطبيق والبروفايل",
-      "مؤشرات مخاطر المحتوى",
+      "مؤشرات المحتوى",
       "تدفقات حماية للأجهزة",
       "وضع خصوصية وتقارير نظيفة",
       "تنبيهات أمنية بسياق واضح",
@@ -521,7 +522,7 @@ const content = {
       label: "عقلية منفعة عامة",
       cardTitle: "أدوات تساعد المحللين يتحركون أسرع",
       description:
-        "أتجه لبناء أدوات مفتوحة المصدر تدعم أعمال الأمن السيبراني: فرز DNS، تصنيف النطاقات، تفسير السجلات، رؤية الشبكات، محاور OSINT، وتقارير نظيفة.",
+        "أتجه لبناء أدوات مفتوحة المصدر تدعم أعمال الأمن السيبراني العملية: فرز DNS، تصنيف النطاقات، تفسير السجلات، رؤية الشبكات، محاور OSINT، والتقارير.",
     },
     stack: {
       eyebrow: "المجال التقني",
@@ -610,7 +611,7 @@ const content = {
       title: "الخارطة القادمة",
     },
     roadmapItems: [
-      "بناء Android native مستقر لـ GodEye Echosystem",
+      "بناء Android native مستقر لـ GodEye Ecosystem",
       "تحسين الجمع في الخلفية",
       "توسيع التخزين المحلي للسجلات",
       "تعلم أذكى للنطاقات",
@@ -622,14 +623,13 @@ const content = {
     ],
     contact: {
       eyebrow: "واجهة التواصل",
-      title: "التواصل",
+      title: "تواصل معي",
     },
     contacts: [
-      { label: "GitHub", value: "xtufa7", href: socialLinks.github, icon: "github" },
-      { label: "X / Twitter", value: "@0xtufa7", href: socialLinks.x, icon: "x" },
-      { label: "Email", value: "tufa7shaml@gmail.com", href: socialLinks.email, icon: "mail" },
-      { label: "Website", value: "xtufa7.github.io", href: socialLinks.website, icon: "website" },
-      { label: "Instagram", value: "_bb5bb", href: socialLinks.instagram, icon: "instagram" },
+      { label: "GitHub", href: socialLinks.github, icon: "github" },
+      { label: "X / Twitter", href: socialLinks.x, icon: "x" },
+      { label: "Instagram", href: socialLinks.instagram, icon: "instagram" },
+      { label: "Email", href: socialLinks.email, icon: "mail" },
     ],
     footer: {
       built: "بناء 0xtufa7",
@@ -771,18 +771,20 @@ function renderRoadmap() {
 function renderContacts() {
   const root = qs("[data-contact]");
   root.innerHTML = content[currentLang].contacts
-    .map((item) => {
-      const value = item.href
-        ? `<a href="${item.href}" target="${item.href.startsWith("mailto:") ? "_self" : "_blank"}" rel="noreferrer">${item.value}</a>`
-        : `<p>${item.value}</p>`;
-      return `
-        <article class="contact-card">
-          <div class="contact-icon">${icon(item.icon)}</div>
-          <span>${item.label}</span>
-          ${value}
-        </article>
-      `;
-    })
+    .map(
+      (item) => `
+        <a
+          class="contact-card"
+          href="${item.href}"
+          target="${item.href.startsWith("mailto:") ? "_self" : "_blank"}"
+          rel="noreferrer"
+          aria-label="${item.label}"
+          data-tooltip="${item.label}"
+        >
+          <span class="contact-icon">${icon(item.icon)}</span>
+        </a>
+      `,
+    )
     .join("");
 }
 
@@ -970,86 +972,13 @@ function initRadar() {
   resize();
   window.addEventListener("resize", resize);
 
-  draw();
-  if (media.matches) window.cancelAnimationFrame(raf);
-}
-
-function initParticles() {
-  const canvas = qs("#particleCanvas");
-  const ctx = canvas.getContext("2d");
-  const media = window.matchMedia("(prefers-reduced-motion: reduce)");
-  let width = 0;
-  let height = 0;
-  let dpr = 1;
-  let raf = 0;
-
-  const particles = Array.from({ length: 86 }, (_, index) => ({
-    x: Math.random(),
-    y: Math.random(),
-    vx: (Math.random() - 0.5) * 0.18,
-    vy: (Math.random() - 0.5) * 0.18,
-    size: index % 9 === 0 ? 1.8 : 1,
-    alpha: 0.12 + Math.random() * 0.28,
-  }));
-
-  function resize() {
-    dpr = Math.min(window.devicePixelRatio || 1, 2);
-    width = window.innerWidth;
-    height = window.innerHeight;
-    canvas.width = Math.floor(width * dpr);
-    canvas.height = Math.floor(height * dpr);
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  const canAnimate = !media.matches && window.matchMedia("(min-width: 681px)").matches;
+  if (canAnimate) {
+    draw();
+  } else {
+    draw();
+    window.cancelAnimationFrame(raf);
   }
-
-  function draw() {
-    ctx.clearRect(0, 0, width, height);
-
-    const field = ctx.createRadialGradient(width * 0.72, height * 0.18, 0, width * 0.72, height * 0.18, Math.max(width, height) * 0.82);
-    field.addColorStop(0, "rgba(45, 91, 255, 0.028)");
-    field.addColorStop(0.48, "rgba(45, 91, 255, 0.012)");
-    field.addColorStop(1, "rgba(45, 91, 255, 0)");
-    ctx.fillStyle = field;
-    ctx.fillRect(0, 0, width, height);
-
-    particles.forEach((p, index) => {
-      p.x += p.vx / width;
-      p.y += p.vy / height;
-      if (p.x < 0 || p.x > 1) p.vx *= -1;
-      if (p.y < 0 || p.y > 1) p.vy *= -1;
-
-      const x = p.x * width;
-      const y = p.y * height;
-
-      ctx.beginPath();
-      ctx.arc(x, y, p.size, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(213, 216, 222, ${p.alpha})`;
-      ctx.fill();
-
-      for (let j = index + 1; j < particles.length; j += 1) {
-        const other = particles[j];
-        const ox = other.x * width;
-        const oy = other.y * height;
-        const dx = x - ox;
-        const dy = y - oy;
-        const distance = Math.hypot(dx, dy);
-        if (distance < 116) {
-          ctx.beginPath();
-          ctx.moveTo(x, y);
-          ctx.lineTo(ox, oy);
-          ctx.strokeStyle = `rgba(45, 91, 255, ${(1 - distance / 116) * 0.08})`;
-          ctx.lineWidth = 1;
-          ctx.stroke();
-        }
-      }
-    });
-
-    raf = window.requestAnimationFrame(draw);
-  }
-
-  resize();
-  window.addEventListener("resize", resize);
-  draw();
-  if (media.matches) window.cancelAnimationFrame(raf);
 }
 
 function init() {
@@ -1058,7 +987,6 @@ function init() {
   initLanguageToggle();
   initReveal();
   initRadar();
-  initParticles();
 }
 
 document.addEventListener("DOMContentLoaded", init);

@@ -12,7 +12,7 @@ Premium bilingual single-page portfolio for a cyber intelligence builder. The si
 - Future mobile oversight system concept.
 - Open-source security tooling direction.
 - Motion-editing / visual craft section.
-- Animated radar, particle background, sharp dashboard UI, sticky navigation, mobile menu, and active section tracking.
+- Lightweight radar visual, sharp dashboard UI, sticky navigation, mobile menu, and active section tracking.
 - Local inline SVG icons and local SVG metadata assets.
 - SEO and OpenGraph metadata.
 
@@ -25,6 +25,7 @@ Premium bilingual single-page portfolio for a cyber intelligence builder. The si
 ├── script.js
 ├── assets/
 │   ├── favicon.svg
+│   ├── site-icon.svg
 │   └── og-image.svg
 ├── .nojekyll
 └── README.md
@@ -58,18 +59,22 @@ For a user/organization GitHub Pages site:
 
 ## Customization
 
-Edit public profile links and contact surfaces in `script.js`:
+Edit public profile links, email, and contact surfaces in `script.js`:
 
 ```js
+const contactEmail = "your@email.com";
+
 const socialLinks = {
   github: "...",
   x: "...",
-  website: "...",
-  email: "mailto:...",
+  instagram: "...",
+  email: `mailto:${contactEmail}`,
 };
 ```
 
 Most bilingual content also lives in `script.js` inside the `content.en` and `content.ar` objects.
+
+To replace the navbar/favicon mark, swap `assets/site-icon.svg` with another local SVG using the same filename.
 
 ## Technical Notes
 
