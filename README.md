@@ -2,65 +2,62 @@
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&height=140&color=0:1C1C1C,100:2D5BFF&section=header"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&height=180&text=Cyber%20Intelligence%20Portfolio&fontSize=34&fontAlignY=35&animation=fadeIn&fontColor=FFFFFF&color=0:0F0F0F,50:1C1C1C,100:2D5BFF"/>
 
-<h1>🛰️ Cyber Intelligence Portfolio</h1>
+<br>
 
 <p>
-A clean bilingual single-page portfolio for a cyber intelligence builder,
-focused on projects, tools, research direction, and contact links.
+Personal space for projects, experiments, visuals, tools, and ideas.
 </p>
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&size=18&pause=1000&color=2D5BFF&center=true&vCenter=true&width=720&lines=Cyber+intelligence+builder...;OSINT+and+network+analysis...;Defensive+security+tooling...;Projects,+contact,+and+support+in+one+place..." />
+<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=500&size=17&pause=1000&color=2D5BFF&center=true&vCenter=true&width=680&lines=Building+quiet+tools+and+systems...;Cyber+intelligence+and+OSINT+direction...;Designing+clean+and+sharp+interfaces...;Keeping+everything+lightweight+and+minimal..." />
 
 <br><br>
 
-<img src="https://img.shields.io/badge/type-Portfolio-2D5BFF?style=for-the-badge">
-<img src="https://img.shields.io/badge/hosting-GitHub%20Pages-1C1C1C?style=for-the-badge">
-<img src="https://img.shields.io/badge/build-static%20site-2D5BFF?style=for-the-badge">
-<img src="https://img.shields.io/badge/languages-EN%20%2F%20AR-1C1C1C?style=for-the-badge">
-
-<br><br>
-
-<img src="https://media.tenor.com/8Qxg8vS4Y9AAAAAi/loading.gif" width="75">
+<img src="https://img.shields.io/badge/status-evolving-2D5BFF?style=flat-square">
+<img src="https://img.shields.io/badge/site-static-1C1C1C?style=flat-square">
+<img src="https://img.shields.io/badge/languages-EN%20%2F%20AR-2D5BFF?style=flat-square">
+<img src="https://img.shields.io/badge/platform-GitHub%20Pages-1C1C1C?style=flat-square">
 
 </div>
 
 ---
 
-## ✨ Overview
+## About
 
-Cyber Intelligence Portfolio is a premium bilingual single-page website built for GitHub Pages.
+This project is a premium bilingual single-page portfolio designed for GitHub Pages.
 
-It is designed to present a personal technical identity without turning the site into a heavy resume.
-The focus is simple: who I am, what I build, where to find my work, and how to support future projects.
+Instead of feeling like a traditional résumé, the site acts more like a digital workspace:
+a place for projects, links, experiments, research direction, visuals, and future ideas.
 
-The site works without a build step, external icon libraries, paid services, or runtime dependencies.
+The experience focuses on:
+
+* Clean dark visuals
+* Sharp dashboard-inspired UI
+* Lightweight structure
+* Subtle motion
+* Personal identity without over-explaining
 
 ---
 
-## 🧩 What It Includes
+## Included
 
-* English and Arabic interface with automatic browser-language detection
+* Automatic Arabic / English detection
 * Manual language switcher
-* Cyber intelligence and OSINT positioning
-* Defensive, regulatory, and network-security analysis sections
-* Flagship private project section
-* Future mobile oversight system concept
-* Open-source security tooling direction
-* Motion-editing / visual craft section
-* Lightweight radar visual
-* Sharp dashboard-style UI
 * Sticky navigation
-* Mobile menu
+* Mobile navigation menu
 * Active section tracking
-* Local inline SVG icons
-* Local SVG metadata assets
-* SEO and OpenGraph metadata
+* Lightweight radar visual
+* Inline SVG assets
+* SEO + OpenGraph metadata
+* OSINT / cyber intelligence direction
+* Project showcase sections
+* Contact and support areas
+* Static deployment with no build tools
 
 ---
 
-## 🗂️ File Structure
+## Structure
 
 ```text
 .
@@ -77,15 +74,13 @@ The site works without a build step, external icon libraries, paid services, or 
 
 ---
 
-## ▶️ Run Locally
-
-Open `index.html` directly in a browser, or serve the folder locally:
+## Local Run
 
 ```powershell
 python -m http.server 4173
 ```
 
-Then open:
+Open:
 
 ```text
 http://localhost:4173
@@ -93,93 +88,85 @@ http://localhost:4173
 
 ---
 
-## 🚀 Deploy to GitHub Pages
+## GitHub Pages Deployment
 
-For a user or organization GitHub Pages site:
-
-1. Create a public repository named `<username>.github.io`.
-2. Place these files in the repository root.
-3. Commit and push to the default branch.
-4. Open **Settings > Pages** in GitHub.
-5. Select **Deploy from branch**.
-6. Choose the default branch and `/ root`.
-7. Wait for the Pages deployment to finish.
+1. Create `<username>.github.io`
+2. Upload project files
+3. Push to main branch
+4. Open GitHub Pages settings
+5. Deploy from branch
+6. Select `/root`
+7. Wait for deployment
 
 ---
 
-## 🎛️ Customization
+## Editing Content
 
-Edit public profile links, email, and contact surfaces in `script.js`:
+Most editable content lives inside:
+
+```text
+script.js
+```
+
+Including:
+
+* Profile links
+* Contact methods
+* Bilingual content
+* Project cards
+* Social platforms
+
+Example:
 
 ```js
-const contactEmail = "your@email.com";
-
 const socialLinks = {
   github: "...",
   x: "...",
   instagram: "...",
-  email: `mailto:${contactEmail}`,
+  email: "...",
 };
 ```
 
-Most bilingual content also lives in `script.js` inside the `content.en` and `content.ar` objects.
-
-To replace the navbar or favicon mark, swap:
-
-```text
-assets/site-icon.svg
-```
-
-with another local SVG using the same filename.
-
 ---
 
-## 💙 Support Section
+## Design Direction
 
-The portfolio can include a small support area for people who want to help keep projects active.
+The portfolio intentionally avoids:
 
-Recommended support style:
+* Heavy frameworks
+* Runtime dependencies
+* Bloated animations
+* Resume-style layouts
+* Unnecessary effects
 
-* Keep it optional
-* Keep it subtle
-* Avoid aggressive donation wording
-* Use a clean card with wallet links or QR codes
-* Place it near the end of the page, not at the top
+The goal is to stay:
 
-Suggested wording:
-
-```text
-Support the work
-
-If you find my tools or research useful, you can support future development.
-Every bit helps keep the projects active, independent, and improving.
-```
-
----
-
-## 🛠️ Technical Notes
-
-* No React, Vite, npm install, CDN, or icon dependency is required
-* `.nojekyll` is included so GitHub Pages serves the site as plain static files
-* The project is intentionally static for speed, resilience, and easy deployment
-* Animations respect `prefers-reduced-motion`
+* fast
+* quiet
+* sharp
+* personal
+* lightweight
 
 ---
 
 <div align="center">
 
-<img src="https://media.tenor.com/DimzPZMypFcAAAAi/love-heart.gif" width="65">
-
-### 💙 Made with care, curiosity, and late-night debugging
-
-<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=15&pause=1000&color=D5D8DE&center=true&vCenter=true&width=520&lines=Built+to+stay+clean...;Built+to+feel+personal...;Built+without+heavy+dependencies...;Made+for+projects,+links,+and+future+ideas..." />
+<img src="https://capsule-render.vercel.app/api?type=rect&height=2&color=0:2D5BFF,100:1C1C1C"/>
 
 <br>
 
-⭐ If you like the project, consider giving it a star
+<img src="https://media.tenor.com/mCyP1bjo9S0AAAAi/mocha-bear-hearts.gif" width="55">
+
+### made with curiosity, music, and late-night ideas
+
+<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=14&pause=1000&color=D5D8DE&center=true&vCenter=true&width=500&lines=some+projects+start+as+random+ideas...;some+turn+into+real+systems...;some+stay+open+all+night..." />
 
 <br><br>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&height=120&color=0:2D5BFF,100:1C1C1C&section=footer"/>
+⭐ if you like the direction, leave a star
+
+<br><br>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&height=120&section=footer&color=0:2D5BFF,100:0F0F0F"/>
 
 </div>
