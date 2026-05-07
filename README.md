@@ -9,22 +9,27 @@
 <br><br>
 
 <a href="https://github.com/xtufa7">
-<img src="https://img.shields.io/badge/GitHub-xtufa7-2D5BFF?style=for-the-badge&logo=github&logoColor=white">
+<img src="https://img.shields.io/badge/-GitHub-2D5BFF?style=for-the-badge&logo=github&logoColor=white">
 </a>
 
 <a href="https://x.com/0xtufa7">
-<img src="https://img.shields.io/badge/X-@0xtufa7-1C1C1C?style=for-the-badge&logo=x&logoColor=white">
+<img src="https://img.shields.io/badge/-X-1C1C1C?style=for-the-badge&logo=x&logoColor=white">
 </a>
 
 <a href="https://instagram.com/_bb5bb">
-<img src="https://img.shields.io/badge/Instagram-_bb5bb-2D5BFF?style=for-the-badge&logo=instagram&logoColor=white">
+<img src="https://img.shields.io/badge/-Instagram-2D5BFF?style=for-the-badge&logo=instagram&logoColor=white">
 </a>
+
+<br><br>
+
+<img src="https://media.tenor.com/mCyP1bjo9S0AAAAi/mocha-bear-hearts.gif" width="55">
+<img src="https://media.tenor.com/mCyP1bjo9S0AAAAi/mocha-bear-hearts.gif" width="55">
 
 </div>
 
 ---
 
-```text id="cyc7mw"
+```text id="x4az4s"
 Cyber Intelligence
 OSINT Research
 Defensive Monitoring
@@ -38,6 +43,10 @@ Static Web Interfaces
 <div align="center">
 
 <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=13&pause=1000&color=D5D8DE&center=true&vCenter=true&width=340&lines=quiet+tools...;sharp+interfaces...;lightweight+systems..." />
+
+<br><br>
+
+<img src="https://media.tenor.com/DimzPZMypFcAAAAi/love-heart.gif" width="52">
 
 <br><br>
 
