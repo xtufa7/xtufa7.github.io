@@ -1,992 +1,484 @@
-const contactEmail = "tufa7shaml@gmail.com";
+const $ = (selector, scope = document) => scope.querySelector(selector);
+const $$ = (selector, scope = document) => [...scope.querySelectorAll(selector)];
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const finePointer = window.matchMedia('(pointer: fine)').matches;
 
-const socialLinks = {
-  github: "https://github.com/xtufa7",
-  x: "https://x.com/0xtufa7",
-  instagram: "https://instagram.com/_bb5bb",
-  website: "https://xtufa7.github.io",
-  email: `mailto:${contactEmail}`,
-};
+const boot = $('.boot');
+const menuToggle = $('.menu-toggle');
+const commandTrigger = $('.command-trigger');
+const commandClose = $('.command-close');
+const cursor = $('.cursor');
+const cursorLabel = $('.cursor-label');
+const progressBar = $('.page-progress span');
+const hero = $('.hero');
+const heroImage = $('.hero__image');
+const headSystem = $('.head-system');
+const pointerCoords = $('#pointer-coords');
 
-const iconSvg = {
-  projects:
-    '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v13a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 18.5v-13Zm2 1V18h12V6.5H6Zm2 2h8v1.7H8V8.5Zm0 3.1h5.8v1.7H8v-1.7Zm0 3.1h3.9v1.7H8v-1.7Z"/></svg>',
-  radar:
-    '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10h-2a8 8 0 1 1-8-8V2Zm1 1v9.6l7.8 4.5 1-1.74-6.8-3.92V3h-2Zm-1 6a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/></svg>',
-  github:
-    '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .8a11.2 11.2 0 0 0-3.54 21.82c.56.1.77-.24.77-.54v-2.1c-3.12.68-3.78-1.34-3.78-1.34-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.68.08-.68 1.13.08 1.73 1.17 1.73 1.17 1 .1.27 2.64 1.05 3.28 1.82.82 1.22-.4 2.44-.76.1-.73.4-1.22.72-1.5-2.5-.28-5.13-1.25-5.13-5.57 0-1.23.44-2.24 1.16-3.03-.12-.28-.5-1.43.1-2.99 0 0 .95-.3 3.1 1.16a10.7 10.7 0 0 1 5.65 0C18.04 6.1 19 6.4 19 6.4c.6 1.56.22 2.7.1 2.99.72.8 1.16 1.8 1.16 3.03 0 4.33-2.63 5.28-5.14 5.56.41.36.77 1.05.77 2.12v3.14c0 .3.2.65.78.54A11.2 11.2 0 0 0 12 .8Z"/></svg>',
-  x:
-    '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.53 3h3.06l-6.69 7.64L21.77 21h-6.16l-4.82-6.3L5.27 21H2.2l7.16-8.18L1.82 3h6.32l4.36 5.76L17.53 3Zm-1.07 16.18h1.7L7.22 4.72H5.4l11.06 14.46Z"/></svg>',
-  instagram:
-    '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Zm4.2 3.3a4.7 4.7 0 1 1 0 9.4 4.7 4.7 0 0 1 0-9.4Zm0 2a2.7 2.7 0 1 0 0 5.4 2.7 2.7 0 0 0 0-5.4Zm5-2.15a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z"/></svg>',
-  mail:
-    '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 5h15A2.5 2.5 0 0 1 22 7.5v9A2.5 2.5 0 0 1 19.5 19h-15A2.5 2.5 0 0 1 2 16.5v-9A2.5 2.5 0 0 1 4.5 5Zm0 2A.5.5 0 0 0 4 7.5v.28l8 4.8 8-4.8V7.5a.5.5 0 0 0-.5-.5h-15Zm15.5 3.1-7.49 4.5a1 1 0 0 1-1.02 0L4 10.1v6.4a.5.5 0 0 0 .5.5h15a.5.5 0 0 0 .5-.5v-6.4Z"/></svg>',
-  website:
-    '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm6.93 9h-3.16a15.7 15.7 0 0 0-1.05-5.06A8.04 8.04 0 0 1 18.93 11ZM12 4.04c.76 1.1 1.5 3.2 1.72 6.96h-3.44C10.5 7.24 11.24 5.14 12 4.04ZM4.07 13h3.16c.13 1.92.5 3.67 1.05 5.06A8.04 8.04 0 0 1 4.07 13Zm3.16-2H4.07a8.04 8.04 0 0 1 4.21-5.06A15.7 15.7 0 0 0 7.23 11ZM12 19.96c-.76-1.1-1.5-3.2-1.72-6.96h3.44c-.22 3.76-.96 5.86-1.72 6.96Zm3.72-1.9c.55-1.39.92-3.14 1.05-5.06h3.16a8.04 8.04 0 0 1-4.21 5.06Z"/></svg>',
-  shield:
-    '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 5v6.1c0 5.05 3.3 9.67 8 10.9 4.7-1.23 8-5.85 8-10.9V5l-8-3Zm0 2.16L18 6.4v4.7c0 3.88-2.42 7.52-6 8.82-3.58-1.3-6-4.94-6-8.82V6.4l6-2.24Z"/></svg>',
-  nodes:
-    '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4a3 3 0 0 1 2.83 2h6.34A3 3 0 1 1 18 10a2.98 2.98 0 0 1-2.12-.88L9.3 12.4A3.03 3.03 0 0 1 9 14l6.2 3.1a3 3 0 1 1-.9 1.8L8.1 15.8A3 3 0 1 1 7.9 11L14.5 7.7A3.2 3.2 0 0 1 14.5 8H8.83A3 3 0 1 1 6 4Z"/></svg>',
-  eye:
-    '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5c5.2 0 8.78 4.02 10 7-1.22 2.98-4.8 7-10 7S3.22 14.98 2 12c1.22-2.98 4.8-7 10-7Zm0 2c-3.8 0-6.6 2.72-7.74 5C5.4 14.28 8.2 17 12 17s6.6-2.72 7.74-5C18.6 9.72 15.8 7 12 7Zm0 2.2a2.8 2.8 0 1 1 0 5.6 2.8 2.8 0 0 1 0-5.6Z"/></svg>',
-  edit:
-    '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4V4Zm2 2v12h12V6H6Zm2 2h8v2H8V8Zm0 4h5v2H8v-2Z"/></svg>',
-  system:
-    '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v11H4V4Zm2 2v7h12V6H6Zm-1 12h14v2H5v-2Zm5-3h4v3h-4v-3Z"/></svg>',
-};
+window.addEventListener('load', () => {
+  window.setTimeout(() => boot?.classList.add('is-hidden'), reduceMotion ? 0 : 1050);
+});
 
-const content = {
-  en: {
-    metaTitle: "0xtufa7 | Cyber Intelligence, OSINT & Network Security",
-    metaDescription:
-      "Personal website of 0xtufa7, focused on cyber intelligence, OSINT, defensive monitoring, network security analysis, regulatory cybersecurity, AI-assisted security systems, and creative editing.",
-    skip: "Skip to content",
-    nav: [
-      ["home", "Home"],
-      ["about", "About"],
-      ["osint", "OSINT"],
-      ["security", "Security"],
-      ["godeye", "Ecosystem"],
-      ["future", "Future"],
-      ["creative", "Editing"],
-      ["stack", "Stack"],
-      ["contact", "Contact"],
-    ],
-    hero: {
-      eyebrow: "cyber intelligence / monitoring systems",
-      subtitle: "Cyber Intelligence • OSINT • Network Security Analysis • Defensive Monitoring",
-      text:
-        "I build tools that make network, DNS, device, and open-source signals easier to read. My focus is practical visibility: what happened, where it came from, which device was involved, and whether it needs attention.",
-    },
-    buttons: {
-      projects: "View Projects",
-      osint: "OSINT Profile",
-      github: "GitHub",
-      contact: "Contact",
-      githubProfile: "GitHub Profile",
-    },
-    readouts: {
-      dns: "DNS SIG / LIVE",
-      osint: "OSINT MAP / ACTIVE",
-      ai: "AI RELAY / READY",
-    },
-    intelStrip: ["DNS behavior", "OSINT pivots", "Network analysis", "Defensive monitoring"],
-    about: {
-      eyebrow: "profile",
-      title: "About 0xtufa7",
-      p1:
-        "I focus on cyber intelligence, OSINT, network behavior analysis, defensive security, and monitoring workflows. My strongest angle is analysis: connecting technical signals to behavior, context, and practical decisions.",
-      p2:
-        "I work with DNS visibility, device activity, domain classification, monitoring dashboards, and AI-assisted interpretation. I treat logs as evidence streams, not just technical records.",
-      p3:
-        "My editing background also shapes the way I design interfaces. Security tools should be sharp, readable, and fast without losing clarity.",
-    },
-    metrics: {
-      osint: "open-source intelligence",
-      dns: "network behavior layer",
-      ai: "analysis accelerator",
-      edit: "motion editing experience",
-    },
-    osint: {
-      eyebrow: "intelligence discipline",
-      title: "OSINT & Network Intelligence",
-    },
-    osintCards: [
-      {
-        title: "Username & Identity Pivots",
-        icon: "eye",
-        description:
-          "Connecting public usernames, profile signals, platform traces, and timing patterns into useful investigative leads.",
-      },
-      {
-        title: "Domain & DNS Reconnaissance",
-        icon: "nodes",
-        description:
-          "Reading domains as infrastructure signals: DNS trails, hosting context, categories, reputation, and behavioral history.",
-      },
-      {
-        title: "Network Signal Analysis",
-        icon: "radar",
-        description:
-          "Separating normal background traffic from meaningful user activity, unusual patterns, and policy-related events.",
-      },
-      {
-      title: "Public Signal Review",
-      icon: "shield",
-      description:
-          "Reviewing public signals, infrastructure context, domain reputation, and weak visibility points with clear evidence.",
-      },
-      {
-        title: "Intelligence Reporting",
-        icon: "projects",
-        description:
-          "Turning findings into readable notes with confidence, context, evidence, and practical next steps.",
-      },
-      {
-        title: "AI-assisted Triage",
-        icon: "system",
-        description:
-          "Using AI to summarize domains, classify activity, reduce noise, and support analyst judgment.",
-      },
-    ],
-    security: {
-      eyebrow: "security posture",
-      title: "Analytical Security, Defensive Control",
-      cardTitle: "Balanced Security Thinking",
-      p1:
-        "I use adversarial thinking to validate assumptions: review exposure, test weak points, and turn findings into better monitoring and control.",
-      p2:
-        "The main focus remains defensive: visibility, policy-aware filtering, risk explanation, network behavior baselines, and systems that make unusual activity easier to understand.",
-    },
-    securityPoints: [
-      "Defensive monitoring and visibility",
-      "Network behavior baselining",
-      "Regulatory and policy-driven filtering",
-      "Surface visibility review",
-      "Infrastructure reputation triage",
-      "Risk explanation for non-technical decisions",
-    ],
-    godeye: {
-      eyebrow: "flagship project",
-      status: "Private / In development",
-      role: "Founder & Builder",
-      category: "Cyber Intelligence / DNS Monitoring / AI Security",
-      title: "GodEye Ecosystem",
-      description:
-        "GodEye is a private project focused on DNS and device intelligence. It is built around NextDNS logs and designed to make them easier to understand. The goal is to show what happened, which device was involved, and whether the activity was normal, background, or worth attention.",
-      note:
-        "Private / In development. Public documentation and repository access will be published when the system is ready.",
-    },
-    godeyeFeatures: [
-      "NextDNS log ingestion",
-      "Device-based activity monitoring",
-      "IPv4 / IPv6 identity tracking",
-      "Live log streaming",
-      "Domain classification",
-      "Background vs active usage detection",
-      "AI domain analysis",
-      "Activity review states",
-      "Policy and content indicators",
-      "Sleep mode monitoring",
-      "SQLite local persistence",
-      "Privacy mode for screenshots",
-      "AI relay support via Cloudflare Workers",
-      "OpenAI / Gemini-ready architecture",
-      "Custom filters and profile-based control",
-    ],
-    future: {
-      eyebrow: "future build",
-      title: "Full Mobile Oversight System",
-      cardTitle: "Privacy-aware mobile supervision and security monitoring",
-      description:
-        "A future system concept for responsible mobile visibility: device activity signals, network behavior, content indicators, profile-based controls, alerts, and clean reporting.",
-    },
-    futurePoints: [
-      "Mobile network activity visibility",
-      "App and profile-based controls",
-      "Content indicators",
-      "Device protection workflows",
-      "Privacy mode and clean reports",
-      "Security alerts with context",
-    ],
-    creative: {
-      eyebrow: "visual craft",
-      title: "Motion Editing Background",
-    },
-    creativeCards: [
-      {
-        title: "Alight Motion",
-        metric: "4 years",
-        icon: "edit",
-        description:
-          "Mobile motion design experience with timing, pacing, transitions, typography, and polished visual impact.",
-      },
-      {
-        title: "After Effects",
-        metric: "4 years",
-        icon: "edit",
-        description:
-          "Composition, motion graphics, cinematic effects, visual rhythm, and polished animated presentation.",
-      },
-      {
-        title: "Blurrr",
-        metric: "1 year",
-        icon: "edit",
-        description:
-          "Fast mobile editing workflow for sharp short-form visuals, clean cuts, glow, blur, and detail control.",
-      },
-    ],
-    opensource: {
-      eyebrow: "builder direction",
-      title: "Open-Source Security Tools",
-      label: "public utility mindset",
-      cardTitle: "Tools that help analysts move faster",
-      description:
-        "I am building toward open-source tools that support practical cybersecurity workflows: DNS triage, domain classification, log interpretation, network visibility, OSINT pivots, and reporting.",
-    },
-    stack: {
-      eyebrow: "technical surface",
-      title: "Technical Stack",
-    },
-    stackGroups: [
-      {
-        title: "Cybersecurity",
-        items: [
-          "Defensive security",
-          "Network security",
-          "OSINT analysis",
-          "DNS intelligence",
-          "Log analysis",
-          "Risk detection",
-          "Regulatory monitoring",
-          "Threat interpretation",
-          "Behavioral monitoring",
-        ],
-      },
-      {
-        title: "Development",
-        items: [
-          "Java Android development",
-          "Flutter experiments",
-          "JavaScript / TypeScript",
-          "Node.js",
-          "PowerShell",
-          "Python basics/scripts",
-          "HTML/CSS",
-          "Git/GitHub",
-        ],
-      },
-      {
-        title: "Cloud & APIs",
-        items: [
-          "Cloudflare Workers",
-          "API relay design",
-          "OpenAI integration",
-          "Gemini integration",
-          "DNS provider APIs",
-          "REST APIs",
-        ],
-      },
-      {
-        title: "Systems",
-        items: [
-          "Windows 11 power user",
-          "Linux / Arch Linux",
-          "Manual partitioning",
-          "Bootloader/GRUB experience",
-          "Development environments",
-          "Local storage / SQLite",
-        ],
-      },
-      {
-        title: "Visual / UI",
-        items: [
-          "Cyber dashboards",
-          "Dark interfaces",
-          "Sharp UI systems",
-          "Motion editing",
-          "After Effects",
-          "Alight Motion",
-          "Blurrr",
-          "Responsive design",
-        ],
-      },
-    ],
-    philosophy: {
-      eyebrow: "operating model",
-      title: "How I Think",
-      text:
-        "Logs alone are not intelligence. Intelligence begins when raw events are connected to context, timing, identity, behavior, and risk. The best systems do more than show data: they explain what changed, why it matters, and what should be watched next.",
-    },
-    approach: [
-      "Observe deeply",
-      "Classify carefully",
-      "Reduce noise",
-      "Detect meaningful signals",
-      "Explain behavior",
-      "Build tools that survive real conditions",
-    ],
-    roadmap: {
-      eyebrow: "project trajectory",
-      title: "Roadmap",
-    },
-    roadmapItems: [
-      "Stable Android native build for GodEye Ecosystem",
-      "Better background collection",
-      "Larger local log storage",
-      "Smarter domain learning",
-      "Profile-based filters",
-      "AI relay abstraction",
-      "Full mobile oversight system concept",
-      "Open-source security utilities",
-      "Public GitHub documentation when ready",
-    ],
-    contact: {
-      eyebrow: "contact surface",
-      title: "Contact Me",
-    },
-    contacts: [
-      { label: "GitHub", href: socialLinks.github, icon: "github" },
-      { label: "X / Twitter", href: socialLinks.x, icon: "x" },
-      { label: "Instagram", href: socialLinks.instagram, icon: "instagram" },
-      { label: "Email", href: socialLinks.email, icon: "mail" },
-    ],
-    footer: {
-      built: "Built by 0xtufa7",
-      tagline: "Cyber Intelligence • OSINT • Defensive Monitoring • AI Security Systems",
-    },
-  },
-  ar: {
-    metaTitle: "0xtufa7 | استخبارات سيبرانية و OSINT وأمن شبكات",
-    metaDescription:
-      "الموقع الشخصي لـ 0xtufa7، متخصص في الاستخبارات السيبرانية، OSINT، المراقبة الدفاعية، تحليل أمن الشبكات، الأمن الرقابي، وأنظمة الأمن المدعومة بالذكاء الاصطناعي.",
-    skip: "تجاوز إلى المحتوى",
-    nav: [
-      ["home", "الرئيسية"],
-      ["about", "نبذة"],
-      ["osint", "OSINT"],
-      ["security", "الأمن"],
-      ["godeye", "Ecosystem"],
-      ["future", "المستقبل"],
-      ["creative", "المونتاج"],
-      ["stack", "المهارات"],
-      ["contact", "تواصل"],
-    ],
-    hero: {
-      eyebrow: "استخبارات سيبرانية / أنظمة مراقبة",
-      subtitle: "استخبارات سيبرانية • OSINT • تحليل أمن الشبكات • مراقبة دفاعية",
-      text:
-        "أبني أدوات تجعل إشارات الشبكات و DNS والأجهزة والمصادر المفتوحة أسهل للفهم. تركيزي على الرؤية العملية: ماذا حدث، من أين أتى، أي جهاز كان ضمن الحدث، وهل يحتاج إلى متابعة.",
-    },
-    buttons: {
-      projects: "عرض المشاريع",
-      osint: "ملف OSINT",
-      github: "غيتهاب",
-      contact: "تواصل",
-      githubProfile: "حساب غيتهاب",
-    },
-    readouts: {
-      dns: "إشارة DNS / مباشرة",
-      osint: "خريطة OSINT / نشطة",
-      ai: "AI RELAY / جاهز",
-    },
-    intelStrip: ["سلوك DNS", "محاور OSINT", "تحليل الشبكات", "مراقبة دفاعية"],
-    about: {
-      eyebrow: "الملف",
-      title: "نبذة عن 0xtufa7",
-      p1:
-        "أركز على الاستخبارات السيبرانية، OSINT، تحليل سلوك الشبكات، الأمن الدفاعي، وسير عمل المراقبة. أقوى زاوية عندي هي التحليل: ربط الإشارات التقنية بالسلوك والسياق والقرار العملي.",
-      p2:
-        "أعمل على رؤية DNS، نشاط الأجهزة، تصنيف النطاقات، لوحات المراقبة، والتفسير المدعوم بالذكاء الاصطناعي. أتعامل مع السجلات كمسارات أدلة وليست مجرد بيانات تقنية.",
-      p3:
-        "خلفيتي في المونتاج تؤثر أيضا على طريقة تصميمي للواجهات. أدوات الأمن يجب أن تكون حادة، واضحة، وسريعة بدون فقدان البساطة.",
-    },
-    metrics: {
-      osint: "استخبارات المصادر المفتوحة",
-      dns: "طبقة سلوك الشبكة",
-      ai: "مسرع للتحليل",
-      edit: "خبرة مونتاج موشن",
-    },
-    osint: {
-      eyebrow: "انضباط استخباراتي",
-      title: "OSINT واستخبارات الشبكات",
-    },
-    osintCards: [
-      {
-        title: "ربط الهويات وأسماء المستخدمين",
-        icon: "eye",
-        description:
-          "ربط أسماء المستخدمين العامة، إشارات الحسابات، آثار المنصات، وأنماط التوقيت لتحويلها إلى خيوط مفيدة للتحليل.",
-      },
-      {
-        title: "استطلاع النطاقات و DNS",
-        icon: "nodes",
-        description:
-          "قراءة النطاقات كبنية تحتية: آثار DNS، سياق الاستضافة، التصنيف، السمعة، والتاريخ السلوكي.",
-      },
-      {
-        title: "تحليل إشارات الشبكة",
-        icon: "radar",
-        description:
-          "فصل الترافيك الخلفي الطبيعي عن النشاط المهم، الأنماط غير المعتادة، والأحداث المرتبطة بالسياسات.",
-      },
-      {
-        title: "مراجعة الإشارات العامة",
-        icon: "shield",
-        description:
-          "مراجعة الإشارات العامة، سياق البنية التحتية، سمعة النطاقات، ونقاط ضعف الرؤية بأدلة واضحة.",
-      },
-      {
-        title: "كتابة التقارير الاستخباراتية",
-        icon: "projects",
-        description:
-          "تحويل النتائج إلى ملاحظات واضحة فيها مستوى ثقة، سياق، أدلة، وخطوات عملية تالية.",
-      },
-      {
-        title: "فرز مدعوم بالذكاء الاصطناعي",
-        icon: "system",
-        description:
-          "استخدام الذكاء الاصطناعي لتلخيص النطاقات، تصنيف النشاط، تقليل الضوضاء، ودعم حكم المحلل.",
-      },
-    ],
-    security: {
-      eyebrow: "وضعية أمنية",
-      title: "تحليل أمني، تحكم دفاعي",
-      cardTitle: "تفكير أمني متوازن",
-      p1:
-        "أستخدم التفكير الأمني الخصومي للتحقق من الافتراضات: مراجعة الظهور العام، اختبار نقاط الضعف، ثم تحويل النتائج إلى مراقبة وتحكم أفضل.",
-      p2:
-        "التركيز الأساسي يبقى دفاعيا: رؤية واضحة، فلترة مبنية على سياسة، شرح المخاطر، خطوط أساس لسلوك الشبكة، وأنظمة تجعل النشاط غير المعتاد أسهل للفهم.",
-    },
-    securityPoints: [
-      "مراقبة دفاعية ورؤية تشغيلية",
-      "بناء خطوط أساس لسلوك الشبكة",
-      "فلترة رقابية وسياسات وصول",
-      "مراجعة وضوح السطح العام",
-      "فرز سمعة البنية التحتية",
-      "شرح المخاطر لاتخاذ قرار واضح",
-    ],
-    godeye: {
-      eyebrow: "المشروع الرئيسي",
-      status: "خاص / قيد التطوير",
-      role: "المؤسس والباني",
-      category: "استخبارات سيبرانية / مراقبة DNS / أمن AI",
-      title: "GodEye Ecosystem",
-      description:
-        "GodEye هو مشروع خاص يركز على استخبارات DNS والأجهزة. يعتمد على سجلات NextDNS ويهدف إلى جعلها أسهل للفهم: ماذا حدث، أي جهاز كان ضمن الحدث، وهل كان النشاط طبيعيا أو خلفيا أو يحتاج إلى انتباه.",
-      note:
-        "خاص / قيد التطوير. سيتم نشر التوثيق والوصول للمستودع عندما يكون النظام جاهزا.",
-    },
-    godeyeFeatures: [
-      "استيراد سجلات NextDNS",
-      "مراقبة النشاط حسب الجهاز",
-      "تتبع هوية IPv4 / IPv6",
-      "بث مباشر للسجلات",
-      "تصنيف النطاقات",
-      "تمييز الخلفي عن النشاط الفعلي",
-      "تحليل النطاقات بالذكاء الاصطناعي",
-      "حالات مراجعة النشاط",
-      "مؤشرات المحتوى والسياسات",
-      "مراقبة وضع النوم",
-      "تخزين محلي SQLite",
-      "وضع خصوصية للسكرينشوت",
-      "دعم AI relay عبر Cloudflare Workers",
-      "معمارية جاهزة لـ OpenAI / Gemini",
-      "فلاتر مخصصة وتحكم حسب البروفايل",
-    ],
-    future: {
-      eyebrow: "بناء مستقبلي",
-      title: "نظام رقابة كامل للجوال",
-      cardTitle: "مراقبة وحماية جوال واعية بالخصوصية",
-      description:
-        "تصور مستقبلي لنظام يوفر رؤية مسؤولة للجوال: إشارات نشاط الجهاز، سلوك الشبكة، مؤشرات المحتوى، تحكم حسب البروفايل، تنبيهات، وتقارير نظيفة.",
-    },
-    futurePoints: [
-      "رؤية لنشاط شبكة الجوال",
-      "تحكم حسب التطبيق والبروفايل",
-      "مؤشرات المحتوى",
-      "تدفقات حماية للأجهزة",
-      "وضع خصوصية وتقارير نظيفة",
-      "تنبيهات أمنية بسياق واضح",
-    ],
-    creative: {
-      eyebrow: "حرفة بصرية",
-      title: "خلفية مونتاج وموشن",
-    },
-    creativeCards: [
-      {
-        title: "Alight Motion",
-        metric: "4 سنوات",
-        icon: "edit",
-        description:
-          "خبرة موشن على الجوال في التوقيت، الإيقاع، الانتقالات، التيبوغرافي، والتأثير البصري المصقول.",
-      },
-      {
-        title: "After Effects",
-        metric: "4 سنوات",
-        icon: "edit",
-        description:
-          "كومبوزشن، موشن غرافيكس، مؤثرات سينمائية، إيقاع بصري، وعرض أنيميشن مصقول.",
-      },
-      {
-        title: "Blurrr",
-        metric: "سنة",
-        icon: "edit",
-        description:
-          "تدفق تحرير سريع للجوال لفيديوهات قصيرة حادة، قصات نظيفة، توهج، بلور، وتحكم بالتفاصيل.",
-      },
-    ],
-    opensource: {
-      eyebrow: "اتجاه البناء",
-      title: "أدوات أمن سيبراني مفتوحة المصدر",
-      label: "عقلية منفعة عامة",
-      cardTitle: "أدوات تساعد المحللين يتحركون أسرع",
-      description:
-        "أتجه لبناء أدوات مفتوحة المصدر تدعم أعمال الأمن السيبراني العملية: فرز DNS، تصنيف النطاقات، تفسير السجلات، رؤية الشبكات، محاور OSINT، والتقارير.",
-    },
-    stack: {
-      eyebrow: "المجال التقني",
-      title: "المهارات والتقنيات",
-    },
-    stackGroups: [
-      {
-        title: "الأمن السيبراني",
-        items: [
-          "الأمن الدفاعي",
-          "أمن الشبكات",
-          "تحليل OSINT",
-          "استخبارات DNS",
-          "تحليل السجلات",
-          "كشف المخاطر",
-          "المراقبة الرقابية",
-          "تفسير التهديدات",
-          "مراقبة السلوك",
-        ],
-      },
-      {
-        title: "التطوير",
-        items: [
-          "تطوير Java Android",
-          "تجارب Flutter",
-          "JavaScript / TypeScript",
-          "Node.js",
-          "PowerShell",
-          "Python سكربتات أساسية",
-          "HTML/CSS",
-          "Git/GitHub",
-        ],
-      },
-      {
-        title: "السحابة والواجهات",
-        items: [
-          "Cloudflare Workers",
-          "تصميم API relay",
-          "دمج OpenAI",
-          "دمج Gemini",
-          "واجهات مزودي DNS",
-          "REST APIs",
-        ],
-      },
-      {
-        title: "الأنظمة",
-        items: [
-          "Windows 11 power user",
-          "Linux / Arch Linux",
-          "Manual partitioning",
-          "Bootloader/GRUB",
-          "بيئات تطوير",
-          "تخزين محلي / SQLite",
-        ],
-      },
-      {
-        title: "البصري والواجهات",
-        items: [
-          "Cyber dashboards",
-          "واجهات داكنة",
-          "أنظمة UI حادة",
-          "مونتاج موشن",
-          "After Effects",
-          "Alight Motion",
-          "Blurrr",
-          "تصميم متجاوب",
-        ],
-      },
-    ],
-    philosophy: {
-      eyebrow: "نموذج التفكير",
-      title: "كيف أفكر",
-      text:
-        "السجلات وحدها ليست استخبارات. الاستخبارات تبدأ عندما ترتبط الأحداث الخام بالسياق، التوقيت، الهوية، السلوك، والمخاطر. أفضل الأنظمة لا تعرض البيانات فقط، بل تشرح ما الذي تغير، لماذا يهم، وما الذي يجب مراقبته بعد ذلك.",
-    },
-    approach: [
-      "الملاحظة بعمق",
-      "التصنيف بحذر",
-      "تقليل الضوضاء",
-      "كشف الإشارات المهمة",
-      "شرح السلوك",
-      "بناء أدوات تصمد تحت ظروف حقيقية",
-    ],
-    roadmap: {
-      eyebrow: "مسار المشاريع",
-      title: "الخارطة القادمة",
-    },
-    roadmapItems: [
-      "بناء Android native مستقر لـ GodEye Ecosystem",
-      "تحسين الجمع في الخلفية",
-      "توسيع التخزين المحلي للسجلات",
-      "تعلم أذكى للنطاقات",
-      "فلاتر حسب البروفايل",
-      "تجريد AI relay",
-      "تصور نظام رقابة كامل للجوال",
-      "أدوات أمنية مفتوحة المصدر",
-      "توثيق GitHub عام عند الجاهزية",
-    ],
-    contact: {
-      eyebrow: "واجهة التواصل",
-      title: "تواصل معي",
-    },
-    contacts: [
-      { label: "GitHub", href: socialLinks.github, icon: "github" },
-      { label: "X / Twitter", href: socialLinks.x, icon: "x" },
-      { label: "Instagram", href: socialLinks.instagram, icon: "instagram" },
-      { label: "Email", href: socialLinks.email, icon: "mail" },
-    ],
-    footer: {
-      built: "بناء 0xtufa7",
-      tagline: "استخبارات سيبرانية • OSINT • مراقبة دفاعية • أنظمة أمن AI",
-    },
-  },
-};
+menuToggle?.addEventListener('click', () => {
+  const open = document.body.classList.toggle('menu-open');
+  menuToggle.setAttribute('aria-expanded', String(open));
+});
 
-const qs = (selector, scope = document) => scope.querySelector(selector);
-const qsa = (selector, scope = document) => [...scope.querySelectorAll(selector)];
+$$('.nav a').forEach((link) => link.addEventListener('click', () => {
+  document.body.classList.remove('menu-open');
+  menuToggle?.setAttribute('aria-expanded', 'false');
+}));
 
-let currentLang = detectLanguage();
-
-function detectLanguage() {
-  const saved = localStorage.getItem("portfolio-language");
-  if (saved === "ar" || saved === "en") return saved;
-  return navigator.language?.toLowerCase().startsWith("ar") ? "ar" : "en";
+function setPalette(open) {
+  document.body.classList.toggle('palette-open', open);
+  $('.command-palette')?.setAttribute('aria-hidden', String(!open));
 }
 
-function t(path) {
-  return path.split(".").reduce((acc, key) => acc?.[key], content[currentLang]) ?? "";
-}
+commandTrigger?.addEventListener('click', () => setPalette(true));
+commandClose?.addEventListener('click', () => setPalette(false));
+$$('.command-palette a').forEach((link) => link.addEventListener('click', () => setPalette(false)));
+document.addEventListener('keydown', (event) => {
+  if (event.key === '/' && !/input|textarea/i.test(document.activeElement?.tagName || '')) {
+    event.preventDefault();
+    setPalette(true);
+  }
+  if (event.key === 'Escape') setPalette(false);
+});
 
-function applyLanguage() {
-  const lang = content[currentLang];
-  document.documentElement.lang = currentLang;
-  document.documentElement.dir = currentLang === "ar" ? "rtl" : "ltr";
-  document.title = lang.metaTitle;
-  qs('meta[name="description"]')?.setAttribute("content", lang.metaDescription);
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -5% 0px' });
 
-  qsa("[data-i18n]").forEach((node) => {
-    const value = t(node.dataset.i18n);
-    if (value) node.textContent = value;
+$$('.reveal').forEach((element, index) => {
+  if (element.closest('.hero')) element.style.transitionDelay = `${Math.min(index * 65, 260)}ms`;
+  revealObserver.observe(element);
+});
+
+window.addEventListener('scroll', () => {
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  const ratio = max > 0 ? window.scrollY / max : 0;
+  progressBar.style.transform = `scaleX(${ratio})`;
+}, { passive: true });
+
+if (finePointer && !reduceMotion) {
+  let cursorX = window.innerWidth / 2;
+  let cursorY = window.innerHeight / 2;
+  let followX = cursorX;
+  let followY = cursorY;
+
+  document.addEventListener('pointermove', (event) => {
+    cursorX = event.clientX;
+    cursorY = event.clientY;
+    document.documentElement.style.setProperty('--mx', `${cursorX}px`);
+    document.documentElement.style.setProperty('--my', `${cursorY}px`);
+    if (pointerCoords) pointerCoords.textContent = `${String(Math.round(cursorX)).padStart(3, '0')} / ${String(Math.round(cursorY)).padStart(3, '0')}`;
   });
 
-  qs("[data-current-lang]").textContent = currentLang.toUpperCase();
-  qs("[data-lang-toggle] strong").textContent = currentLang === "en" ? "AR" : "EN";
+  const moveCursor = () => {
+    followX += (cursorX - followX) * 0.18;
+    followY += (cursorY - followY) * 0.18;
+    cursor.style.transform = `translate(${followX}px, ${followY}px) translate(-50%, -50%)`;
+    cursorLabel.style.transform = `translate(${followX}px, ${followY}px) translate(-50%, -50%)`;
+    requestAnimationFrame(moveCursor);
+  };
+  moveCursor();
 
-  renderNavigation();
-  renderAllDynamic();
-}
-
-function renderNavigation() {
-  const root = qs("[data-nav-links]");
-  root.innerHTML = content[currentLang].nav
-    .map(([id, label], index) => `<a href="#${id}" class="${index === 0 ? "active" : ""}">${label}</a>`)
-    .join("");
-  bindNavLinks();
-}
-
-function icon(name) {
-  return iconSvg[name] || iconSvg.system;
-}
-
-function hydrateIcons() {
-  qsa("[data-icon]").forEach((node) => {
-    node.innerHTML = icon(node.dataset.icon);
-  });
-}
-
-function renderIntelStrip() {
-  const root = qs("[data-intel-strip]");
-  root.innerHTML = content[currentLang].intelStrip.map((item) => `<span>${item}</span>`).join("");
-}
-
-function renderCards(rootSelector, items, className = "spec-card") {
-  const root = qs(rootSelector);
-  root.innerHTML = items
-    .map(
-      (item) => `
-        <article class="${className}">
-          <div class="card-icon">${icon(item.icon)}</div>
-          <h3>${item.title}</h3>
-          ${item.metric ? `<strong class="creative-metric">${item.metric}</strong>` : ""}
-          <p>${item.description}</p>
-        </article>
-      `,
-    )
-    .join("");
-}
-
-function renderFeatures() {
-  const root = qs("[data-godeye-features]");
-  root.innerHTML = content[currentLang].godeyeFeatures.map((feature) => `<div class="feature-item">${feature}</div>`).join("");
-}
-
-function renderSecurity() {
-  const root = qs("[data-security]");
-  root.innerHTML = content[currentLang].securityPoints
-    .map((point, index) => `<div class="ops-item"><span>${String(index + 1).padStart(2, "0")}</span>${point}</div>`)
-    .join("");
-}
-
-function renderFuture() {
-  const root = qs("[data-future]");
-  root.innerHTML = content[currentLang].futurePoints.map((point) => `<span>${point}</span>`).join("");
-}
-
-function renderStack() {
-  const root = qs("[data-stack]");
-  root.innerHTML = content[currentLang].stackGroups
-    .map(
-      (group, index) => `
-        <article class="stack-card">
-          <div class="stack-card-head">
-            <span class="stack-index">${String(index + 1).padStart(2, "0")}</span>
-            <h3>${group.title}</h3>
-          </div>
-          <div class="skill-list">
-            ${group.items.map((item) => `<span class="skill-row">${item}</span>`).join("")}
-          </div>
-        </article>
-      `,
-    )
-    .join("");
-}
-
-function renderApproach() {
-  const root = qs("[data-approach]");
-  root.innerHTML = content[currentLang].approach
-    .map((item, index) => `<div class="approach-item"><span>${String(index + 1).padStart(2, "0")}</span>${item}</div>`)
-    .join("");
-}
-
-function renderRoadmap() {
-  const root = qs("[data-roadmap]");
-  root.innerHTML = content[currentLang].roadmapItems
-    .map(
-      (item, index) => `
-        <article class="timeline-item">
-          <span class="timeline-index">${String(index + 1).padStart(2, "0")}</span>
-          <p>${item}</p>
-        </article>
-      `,
-    )
-    .join("");
-}
-
-function renderContacts() {
-  const root = qs("[data-contact]");
-  root.innerHTML = content[currentLang].contacts
-    .map(
-      (item) => `
-        <a
-          class="contact-card"
-          href="${item.href}"
-          target="${item.href.startsWith("mailto:") ? "_self" : "_blank"}"
-          rel="noreferrer"
-          aria-label="${item.label}"
-          data-tooltip="${item.label}"
-        >
-          <span class="contact-icon">${icon(item.icon)}</span>
-        </a>
-      `,
-    )
-    .join("");
-}
-
-function renderAllDynamic() {
-  hydrateIcons();
-  renderIntelStrip();
-  renderCards("[data-osint]", content[currentLang].osintCards);
-  renderSecurity();
-  renderFeatures();
-  renderFuture();
-  renderCards("[data-creative]", content[currentLang].creativeCards, "creative-card");
-  renderStack();
-  renderApproach();
-  renderRoadmap();
-  renderContacts();
-}
-
-function bindNavLinks() {
-  const toggle = qs("[data-nav-toggle]");
-  const links = qs("[data-nav-links]");
-  qsa(".nav-links a").forEach((link) => {
-    link.addEventListener("click", () => {
-      toggle.setAttribute("aria-expanded", "false");
-      links.classList.remove("open");
-      document.body.classList.remove("nav-open");
+  $$('a, button, [data-cursor]').forEach((element) => {
+    element.addEventListener('pointerenter', () => {
+      const label = element.dataset.cursor || (element.matches('button') ? 'CLICK' : 'OPEN');
+      cursor.classList.add('is-active');
+      cursorLabel.classList.add('is-active');
+      cursorLabel.textContent = label;
+    });
+    element.addEventListener('pointerleave', () => {
+      cursor.classList.remove('is-active');
+      cursorLabel.classList.remove('is-active');
     });
   });
-}
 
-function initNavigation() {
-  const toggle = qs("[data-nav-toggle]");
-  const links = qs("[data-nav-links]");
-
-  toggle.addEventListener("click", () => {
-    const isOpen = toggle.getAttribute("aria-expanded") === "true";
-    toggle.setAttribute("aria-expanded", String(!isOpen));
-    links.classList.toggle("open", !isOpen);
-    document.body.classList.toggle("nav-open", !isOpen);
+  $$('.magnetic').forEach((element) => {
+    element.addEventListener('pointermove', (event) => {
+      const rect = element.getBoundingClientRect();
+      const x = event.clientX - rect.left - rect.width / 2;
+      const y = event.clientY - rect.top - rect.height / 2;
+      element.style.transform = `translate(${x * 0.11}px, ${y * 0.11}px)`;
+    });
+    element.addEventListener('pointerleave', () => { element.style.transform = ''; });
   });
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        const id = entry.target.id;
-        qsa(".nav-links a").forEach((link) => {
-          const target = link.getAttribute("href")?.replace("#", "");
-          link.classList.toggle("active", target === id);
-        });
-      });
-    },
-    { rootMargin: "-36% 0px -56% 0px", threshold: 0 },
-  );
+  $$('.tilt-card').forEach((card) => {
+    card.addEventListener('pointermove', (event) => {
+      const rect = card.getBoundingClientRect();
+      const rotateY = ((event.clientX - rect.left) / rect.width - 0.5) * 7;
+      const rotateX = ((event.clientY - rect.top) / rect.height - 0.5) * -7;
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+    card.addEventListener('pointerleave', () => { card.style.transform = ''; });
+  });
 
-  qsa("[data-section]").forEach((section) => observer.observe(section));
-}
-
-function initLanguageToggle() {
-  qs("[data-lang-toggle]").addEventListener("click", () => {
-    currentLang = currentLang === "en" ? "ar" : "en";
-    localStorage.setItem("portfolio-language", currentLang);
-    applyLanguage();
+  hero?.addEventListener('pointermove', (event) => {
+    const x = event.clientX / window.innerWidth - 0.5;
+    const y = event.clientY / window.innerHeight - 0.5;
+    heroImage.style.transform = `scale(1.065) translate(${x * -12}px, ${y * -9}px)`;
+    headSystem.style.setProperty('--hx', `${x * 18}px`);
+    headSystem.style.setProperty('--hy', `${y * 14}px`);
+  });
+  hero?.addEventListener('pointerleave', () => {
+    heroImage.style.transform = '';
+    headSystem.style.setProperty('--hx', '0px');
+    headSystem.style.setProperty('--hy', '0px');
   });
 }
 
-function initReveal() {
-  const reveals = qsa(".reveal");
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.12 },
-  );
-
-  reveals.forEach((item) => {
-    if (item.classList.contains("immediate")) item.classList.add("visible");
-    else observer.observe(item);
-  });
-}
-
-function initRadar() {
-  const canvas = qs("#radarCanvas");
-  if (!canvas) return;
-
-  const ctx = canvas.getContext("2d");
-  const media = window.matchMedia("(prefers-reduced-motion: reduce)");
-  let raf = 0;
-  let angle = 0;
+function initSignalCanvas() {
+  const canvas = $('#signal-canvas');
+  if (!canvas || reduceMotion) return;
+  const context = canvas.getContext('2d');
+  const pointer = { x: -999, y: -999 };
   let width = 0;
   let height = 0;
   let dpr = 1;
-
-  const nodes = Array.from({ length: 44 }, (_, index) => ({
-    radius: 42 + ((index * 29) % 238),
-    theta: (index * 137.5 * Math.PI) / 180,
-    size: index % 6 === 0 ? 2.5 : 1.35,
-    alpha: 0.2 + (index % 8) * 0.055,
-    pulse: index % 4,
-  }));
+  let particles = [];
 
   function resize() {
     const rect = canvas.getBoundingClientRect();
-    dpr = Math.min(window.devicePixelRatio || 1, 2);
     width = rect.width;
     height = rect.height;
-    canvas.width = Math.floor(width * dpr);
-    canvas.height = Math.floor(height * dpr);
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = width * dpr;
+    canvas.height = height * dpr;
+    context.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const count = Math.max(42, Math.min(90, Math.floor(width / 18)));
+    particles = Array.from({ length: count }, (_, index) => ({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      vx: (Math.random() - 0.5) * 0.28,
+      vy: (Math.random() - 0.5) * 0.28,
+      r: index % 9 === 0 ? 2 : 1
+    }));
   }
 
-  function draw() {
-    const cx = width / 2;
-    const cy = height / 2;
-    const max = Math.min(width, height) * 0.43;
+  hero.addEventListener('pointermove', (event) => {
+    const rect = hero.getBoundingClientRect();
+    pointer.x = event.clientX - rect.left;
+    pointer.y = event.clientY - rect.top;
+  });
+  hero.addEventListener('pointerleave', () => { pointer.x = -999; pointer.y = -999; });
 
-    ctx.clearRect(0, 0, width, height);
-    ctx.save();
-    ctx.translate(cx, cy);
+  function frame() {
+    context.clearRect(0, 0, width, height);
+    particles.forEach((particle, index) => {
+      const dx = pointer.x - particle.x;
+      const dy = pointer.y - particle.y;
+      const distance = Math.hypot(dx, dy);
+      if (distance < 150) {
+        particle.vx -= dx * 0.000012;
+        particle.vy -= dy * 0.000012;
+      }
+      particle.x += particle.vx;
+      particle.y += particle.vy;
+      if (particle.x < 0 || particle.x > width) particle.vx *= -1;
+      if (particle.y < 0 || particle.y > height) particle.vy *= -1;
+      particle.vx *= 0.999;
+      particle.vy *= 0.999;
 
-    for (let i = 1; i <= 5; i += 1) {
-      ctx.beginPath();
-      ctx.arc(0, 0, (max / 5) * i, 0, Math.PI * 2);
-      ctx.strokeStyle = `rgba(213, 216, 222, ${0.045 + i * 0.024})`;
-      ctx.lineWidth = 1;
-      ctx.stroke();
-    }
+      context.beginPath();
+      context.arc(particle.x, particle.y, particle.r, 0, Math.PI * 2);
+      context.fillStyle = index % 7 === 0 ? 'rgba(221,185,255,.8)' : 'rgba(181,108,255,.42)';
+      context.fill();
 
-    for (let i = 0; i < 12; i += 1) {
-      const theta = (Math.PI * 2 * i) / 12;
-      ctx.beginPath();
-      ctx.moveTo(Math.cos(theta) * 26, Math.sin(theta) * 26);
-      ctx.lineTo(Math.cos(theta) * max, Math.sin(theta) * max);
-      ctx.strokeStyle = "rgba(45, 91, 255, 0.1)";
-      ctx.lineWidth = 1;
-      ctx.stroke();
-    }
-
-    const gradient = ctx.createRadialGradient(0, 0, 0, 0, 0, max);
-    gradient.addColorStop(0, "rgba(45, 91, 255, 0.24)");
-    gradient.addColorStop(0.45, "rgba(45, 91, 255, 0.09)");
-    gradient.addColorStop(1, "rgba(45, 91, 255, 0)");
-
-    ctx.rotate(angle);
-    ctx.beginPath();
-    ctx.moveTo(0, 0);
-    ctx.arc(0, 0, max, -0.2, 0.2);
-    ctx.closePath();
-    ctx.fillStyle = gradient;
-    ctx.fill();
-
-    ctx.beginPath();
-    ctx.moveTo(0, 0);
-    ctx.lineTo(max, 0);
-    ctx.strokeStyle = "rgba(45, 91, 255, 0.9)";
-    ctx.lineWidth = 1.8;
-    ctx.shadowColor = "rgba(45, 91, 255, 0.9)";
-    ctx.shadowBlur = 18;
-    ctx.stroke();
-    ctx.shadowBlur = 0;
-    ctx.restore();
-
-    nodes.forEach((node) => {
-      const orbit = node.radius * (max / 280);
-      const x = cx + Math.cos(node.theta + angle * 0.14) * orbit;
-      const y = cy + Math.sin(node.theta + angle * 0.14) * orbit;
-      const sweepDistance = Math.abs(Math.atan2(Math.sin(node.theta - angle), Math.cos(node.theta - angle)));
-      const glow = Math.max(0, 1 - sweepDistance / 0.5);
-      const alpha = node.alpha + glow * 0.62;
-
-      ctx.beginPath();
-      ctx.arc(x, y, node.size + glow * 2.2, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${glow > 0.72 ? "255, 61, 85" : "213, 216, 222"}, ${alpha})`;
-      ctx.fill();
+      for (let otherIndex = index + 1; otherIndex < particles.length; otherIndex += 1) {
+        const other = particles[otherIndex];
+        const linkDistance = Math.hypot(particle.x - other.x, particle.y - other.y);
+        if (linkDistance < 105) {
+          context.beginPath();
+          context.moveTo(particle.x, particle.y);
+          context.lineTo(other.x, other.y);
+          context.strokeStyle = `rgba(181,108,255,${(1 - linkDistance / 105) * 0.2})`;
+          context.lineWidth = 0.6;
+          context.stroke();
+        }
+      }
     });
-
-    angle += 0.014;
-    raf = window.requestAnimationFrame(draw);
+    requestAnimationFrame(frame);
   }
 
   resize();
-  window.addEventListener("resize", resize);
+  window.addEventListener('resize', resize);
+  frame();
+}
+initSignalCanvas();
 
-  const canAnimate = !media.matches && window.matchMedia("(min-width: 681px)").matches;
-  if (canAnimate) {
-    draw();
-  } else {
-    draw();
-    window.cancelAnimationFrame(raf);
+let packets = 1284;
+window.setInterval(() => {
+  packets += Math.floor(Math.random() * 19) + 1;
+  const packetNode = $('.packet-count');
+  if (packetNode) packetNode.textContent = String(packets).padStart(6, '0');
+}, 900);
+
+const codeSamples = {
+  build: `<span class="code-muted">// local-first intelligence pipeline</span>\n<span class="code-purple">const</span> system = <span class="code-purple">new</span> <span class="code-lilac">GodEye</span>({\n  source: <span class="code-green">"nextdns"</span>,\n  storage: <span class="code-green">"sqlite"</span>,\n  telemetry: <span class="code-purple">false</span>\n});\n\n<span class="code-purple">await</span> system.<span class="code-lilac">observe</span>();\n<span class="code-purple">await</span> system.<span class="code-lilac">classify</span>({\n  behavior: <span class="code-purple">true</span>,\n  context: <span class="code-purple">true</span>\n});\n\n<span class="code-green">✓ signal pipeline ready</span>`,
+  ship: `<span class="code-muted"># build once, ship clean</span>\n<span class="code-purple">dotnet</span> publish ./src \\\n  -c Release \\\n  -r win-x64 \\\n  --self-contained true\n\n<span class="code-purple">npm</span> run build\n<span class="code-purple">wrangler</span> deploy\n\n<span class="code-green">✓ binaries verified</span>\n<span class="code-green">✓ worker deployed</span>\n<span class="code-green">✓ release ready</span>`,
+  monitor: `<span class="code-muted">// evidence over noise</span>\n<span class="code-purple">SELECT</span> device, domain, risk\n<span class="code-purple">FROM</span> activity\n<span class="code-purple">WHERE</span> behavior != <span class="code-green">"baseline"</span>\n<span class="code-purple">ORDER BY</span> confidence DESC;\n\n07:42:16  DNS / LIVE\n07:42:17  DEVICE / LINKED\n07:42:18  RISK / EXPLAINED\n\n<span class="code-green">✓ monitoring without telemetry</span>`
+};
+
+function setCodeMode(mode) {
+  const output = $('.code-output code');
+  if (output) output.innerHTML = codeSamples[mode];
+  $$('.code-tab').forEach((tab) => {
+    const active = tab.dataset.mode === mode;
+    tab.classList.toggle('is-active', active);
+    tab.setAttribute('aria-selected', String(active));
+  });
+}
+setCodeMode('build');
+$$('.code-tab').forEach((tab) => tab.addEventListener('click', () => setCodeMode(tab.dataset.mode)));
+
+const countObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
+    const target = Number(entry.target.dataset.count);
+    const start = performance.now();
+    const tick = (now) => {
+      const progress = Math.min(1, (now - start) / 900);
+      entry.target.textContent = Math.round(target * (1 - Math.pow(1 - progress, 3)));
+      if (progress < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+    countObserver.unobserve(entry.target);
+  });
+}, { threshold: 0.7 });
+$$('[data-count]').forEach((counter) => countObserver.observe(counter));
+
+async function attachOptionalMedia(element, container, missingClass, onReady) {
+  const source = element?.dataset.source;
+  if (!element || !source) return false;
+  try {
+    const response = await fetch(source, { method: 'HEAD', cache: 'no-store' });
+    if (!response.ok) throw new Error('missing');
+    element.src = source;
+    container?.classList.add(missingClass);
+    onReady?.();
+    return true;
+  } catch {
+    return false;
   }
 }
 
-function init() {
-  applyLanguage();
-  initNavigation();
-  initLanguageToggle();
-  initReveal();
-  initRadar();
+const video = $('#feature-video');
+const videoPlayer = $('.video-player');
+const videoToggle = $('.video-toggle');
+const videoMute = $('#video-mute');
+const videoVolume = $('#video-volume');
+const videoVolumeValue = $('#video-volume-value');
+let hasVideo = false;
+attachOptionalMedia(video, videoPlayer, 'has-video', () => {
+  hasVideo = true;
+  video.volume = 0.22;
+  video.muted = true;
+  video.play().catch(() => {});
+});
+videoToggle?.addEventListener('click', async () => {
+  if (!hasVideo) return;
+  if (video.paused) {
+    await video.play();
+    videoToggle.querySelector('span').textContent = 'Ⅱ';
+  } else {
+    video.pause();
+    videoToggle.querySelector('span').textContent = '▶';
+  }
+});
+
+function updateVideoSoundUI() {
+  if (!video) return;
+  videoMute.textContent = video.muted ? 'SOUND OFF' : 'SOUND ON';
+  videoMute.setAttribute('aria-pressed', String(video.muted));
+  videoVolume.value = String(Math.round(video.volume * 100));
+  videoVolumeValue.textContent = `${Math.round(video.volume * 100)}%`;
 }
 
-document.addEventListener("DOMContentLoaded", init);
+videoMute?.addEventListener('click', async () => {
+  video.muted = !video.muted;
+  if (!video.muted && video.paused) await video.play();
+  updateVideoSoundUI();
+});
+
+videoVolume?.addEventListener('input', async () => {
+  video.volume = Number(videoVolume.value) / 100;
+  video.muted = video.volume === 0;
+  if (!video.muted && video.paused) await video.play();
+  updateVideoSoundUI();
+});
+
+video?.addEventListener('volumechange', updateVideoSoundUI);
+updateVideoSoundUI();
+
+const audio = $('#cardigan-audio');
+const audioToggle = $('#audio-toggle');
+const audioReplay = $('#audio-replay');
+const audioMute = $('#audio-mute');
+const audioVolume = $('#audio-volume');
+const audioVolumeValue = $('#audio-volume-value');
+const audioMode = $('#audio-mode');
+const audioTime = $('#audio-time');
+const audioProgress = $('.audio-progress i');
+const woundStage = $('#wound-stage');
+const cueSpans = $$('.lyric-sync [data-cue]');
+const SOURCE_OFFSET = 16;
+const AUDIO_START = 0;
+const VISUAL_DURATION = 8;
+let hasAudio = false;
+let demoPlaying = false;
+let demoStart = 0;
+let syncFrame = 0;
+
+attachOptionalMedia(audio, null, '', () => {
+  hasAudio = true;
+  audio.volume = 0.28;
+  audio.muted = false;
+  audioMode.textContent = 'CARDIGAN / READY AT 00:16';
+  audioToggle.querySelector('span').textContent = 'PLAY SONG';
+  let audioPrepared = false;
+  const prepareAudio = () => {
+    if (audioPrepared || !Number.isFinite(audio.duration) || audio.duration <= AUDIO_START) return;
+    audioPrepared = true;
+    audio.currentTime = AUDIO_START;
+    audioTime.textContent = `${formatTime(SOURCE_OFFSET)} / ${formatTime(audio.duration + SOURCE_OFFSET)}`;
+  };
+  if (audio.readyState >= 1) prepareAudio();
+  else audio.addEventListener('loadedmetadata', prepareAudio, { once: true });
+  audio.addEventListener('canplay', prepareAudio, { once: true });
+  window.setTimeout(prepareAudio, 100);
+});
+
+function formatTime(seconds) {
+  const safe = Number.isFinite(seconds) ? seconds : 0;
+  const minutes = Math.floor(safe / 60);
+  const remainingSeconds = Math.floor(safe % 60);
+  return `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
+}
+
+function syncWound(time, duration = VISUAL_DURATION, mediaTime = time, mediaDuration = duration) {
+  const loopTime = Math.max(0, time);
+  let phase = 'idle';
+  if (loopTime >= 0.4 && loopTime < 2.2) phase = 'scar';
+  if (loopTime >= 2.2 && loopTime < 5.0) phase = 'stars';
+  if (loopTime >= 5.0) phase = 'bleed';
+  woundStage.dataset.phase = phase;
+
+  const cueTimes = [0.35, 1.3, 2.25, 4.6, 5.45];
+  let activeCue = 0;
+  cueTimes.forEach((cue, index) => { if (loopTime >= cue) activeCue = index; });
+  cueSpans.forEach((span, index) => span.classList.toggle('is-active', index === activeCue));
+
+  const ratio = Math.min(1, Math.max(0, (mediaTime - SOURCE_OFFSET) / Math.max(mediaDuration - SOURCE_OFFSET, 0.1)));
+  audioProgress.style.transform = `scaleX(${ratio})`;
+  audioTime.textContent = `${formatTime(mediaTime)} / ${formatTime(mediaDuration)}`;
+}
+
+function runSync(now) {
+  if (hasAudio && !audio.paused) {
+    syncWound(audio.currentTime, VISUAL_DURATION, audio.currentTime + SOURCE_OFFSET, (audio.duration || VISUAL_DURATION) + SOURCE_OFFSET);
+    syncFrame = requestAnimationFrame(runSync);
+    return;
+  }
+  if (demoPlaying) {
+    const elapsed = (now - demoStart) / 1000;
+    if (elapsed >= VISUAL_DURATION) {
+      demoPlaying = false;
+      syncWound(VISUAL_DURATION, VISUAL_DURATION, SOURCE_OFFSET + VISUAL_DURATION, SOURCE_OFFSET + VISUAL_DURATION);
+      audioToggle.querySelector('span').textContent = 'REPLAY VISUAL / DEMO';
+      audioToggle.querySelector('b').textContent = '↻';
+      return;
+    }
+    syncWound(elapsed, VISUAL_DURATION, SOURCE_OFFSET + elapsed, SOURCE_OFFSET + VISUAL_DURATION);
+    syncFrame = requestAnimationFrame(runSync);
+  }
+}
+
+audioToggle?.addEventListener('click', async () => {
+  cancelAnimationFrame(syncFrame);
+  if (hasAudio) {
+    if (audio.paused) {
+      if (audio.ended) audio.currentTime = AUDIO_START;
+      await audio.play();
+      audioToggle.querySelector('span').textContent = 'PAUSE SONG';
+      audioToggle.querySelector('b').textContent = 'Ⅱ';
+      syncFrame = requestAnimationFrame(runSync);
+    } else {
+      audio.pause();
+      audioToggle.querySelector('span').textContent = 'PLAY SONG';
+      audioToggle.querySelector('b').textContent = '▶';
+    }
+    return;
+  }
+  demoPlaying = true;
+  demoStart = performance.now();
+  audioToggle.querySelector('span').textContent = 'RUNNING VISUAL / DEMO';
+  audioToggle.querySelector('b').textContent = 'Ⅱ';
+  audioMode.textContent = 'DEMO TIMELINE / NO AUDIO';
+  syncFrame = requestAnimationFrame(runSync);
+});
+
+audioReplay?.addEventListener('click', async () => {
+  if (!hasAudio) {
+    demoPlaying = true;
+    demoStart = performance.now();
+    syncFrame = requestAnimationFrame(runSync);
+    return;
+  }
+  cancelAnimationFrame(syncFrame);
+  audio.currentTime = AUDIO_START;
+  woundStage.dataset.phase = 'idle';
+  await audio.play();
+  audioToggle.querySelector('span').textContent = 'PAUSE SONG';
+  audioToggle.querySelector('b').textContent = 'Ⅱ';
+  syncFrame = requestAnimationFrame(runSync);
+});
+
+function updateAudioSoundUI() {
+  if (!audio) return;
+  audioMute.textContent = audio.muted ? 'UNMUTE' : 'MUTE';
+  audioMute.setAttribute('aria-pressed', String(audio.muted));
+  audioVolume.value = String(Math.round(audio.volume * 100));
+  audioVolumeValue.textContent = `${Math.round(audio.volume * 100)}%`;
+}
+
+audioMute?.addEventListener('click', () => {
+  audio.muted = !audio.muted;
+  updateAudioSoundUI();
+});
+
+audioVolume?.addEventListener('input', () => {
+  audio.volume = Number(audioVolume.value) / 100;
+  audio.muted = audio.volume === 0;
+  updateAudioSoundUI();
+});
+
+audio?.addEventListener('volumechange', updateAudioSoundUI);
+updateAudioSoundUI();
+
+audio?.addEventListener('ended', () => {
+  cancelAnimationFrame(syncFrame);
+  audio.currentTime = AUDIO_START;
+  audioToggle.querySelector('span').textContent = 'PLAY SONG';
+  audioToggle.querySelector('b').textContent = '▶';
+});
+
+woundStage?.addEventListener('pointerdown', (event) => {
+  const rect = woundStage.getBoundingClientRect();
+  const star = document.createElement('span');
+  star.className = 'burst-star';
+  star.textContent = '✦';
+  star.style.left = `${event.clientX - rect.left}px`;
+  star.style.top = `${event.clientY - rect.top}px`;
+  woundStage.appendChild(star);
+  window.setTimeout(() => star.remove(), 1300);
+});
+
+document.getElementById('year').textContent = new Date().getFullYear();
