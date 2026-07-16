@@ -1,331 +1,330 @@
 <!doctype html>
-<html lang="en" dir="ltr">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>0xtufa7 | Cyber Intelligence, OSINT & Network Security</title>
-    <meta
-      name="description"
-      content="Personal website of 0xtufa7, focused on cyber intelligence, OSINT, defensive monitoring, network security analysis, regulatory cybersecurity, AI-assisted security systems, and creative editing."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://xtufa7.github.io" />
-    <meta property="og:title" content="0xtufa7 | Cyber Intelligence, OSINT & Network Security" />
-    <meta
-      property="og:description"
-      content="Cyber intelligence profile for 0xtufa7: OSINT, network security analysis, defensive monitoring, regulatory cybersecurity, AI security systems, and open-source security tooling."
-    />
-    <meta property="og:image" content="https://xtufa7.github.io/assets/og-image.svg" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="0xtufa7 | Cyber Intelligence, OSINT & Network Security" />
-    <meta
-      name="twitter:description"
-      content="Cyber intelligence profile for 0xtufa7: OSINT, network security analysis, defensive monitoring, regulatory cybersecurity, AI security systems, and open-source security tooling."
-    />
-    <meta name="theme-color" content="#07080c" />
-    <link rel="icon" type="image/svg+xml" href="assets/site-icon.svg" />
-    <link rel="preload" href="styles.css" as="style" />
+    <meta name="theme-color" content="#07040a" />
+    <meta name="description" content="0xTuFa7 V3 — full-stack development, web systems, defensive intelligence, and motion." />
+    <title>0xTuFa7 V3 — Full-Stack in the Wired</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+    <div class="boot" aria-hidden="true">
+      <div class="boot__grid"></div>
+      <p>INITIALIZING IDENTITY / VERSION 3.0</p>
+      <strong>0xTUFA7</strong>
+      <div class="boot__bar"><i></i></div>
+      <small>WELCOME TO THE WIRED</small>
+    </div>
 
-    <div class="noise-layer" aria-hidden="true"></div>
-    <div class="grid-layer" aria-hidden="true"></div>
-    <div class="beam-layer" aria-hidden="true"></div>
+    <div class="cursor" aria-hidden="true"><span></span></div>
+    <div class="cursor-label" aria-hidden="true">OPEN</div>
+    <div class="noise" aria-hidden="true"></div>
+    <div class="scanlines" aria-hidden="true"></div>
+    <div class="page-progress" aria-hidden="true"><span></span></div>
 
-    <header class="site-header" data-header>
-      <nav class="nav-shell" aria-label="Primary navigation">
-        <a class="brand-mark" href="#home" aria-label="0xtufa7 home">
-          <img src="assets/site-icon.svg" alt="" aria-hidden="true" />
-          <span>0xtufa7</span>
-        </a>
+    <header class="site-header">
+      <a class="brand magnetic" href="#top" aria-label="0xTuFa7 home">
+        <span class="brand__diamond">7</span>
+        <span>0xTUFA7<sup>3.0</sup></span>
+      </a>
 
-        <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" data-nav-toggle>
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+      <button class="menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span></button>
 
-        <div class="nav-links" data-nav-links></div>
-
-        <button class="lang-toggle" type="button" data-lang-toggle aria-label="Switch language">
-          <span data-current-lang>EN</span>
-          <strong>AR</strong>
-        </button>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#signal">Signal</a>
+        <a href="#development">Development</a>
+        <a href="#constellation">Scars</a>
+        <a href="#projects">Builds</a>
       </nav>
+
+      <button class="command-trigger" type="button" aria-label="Open command palette"><span>/</span> COMMAND</button>
     </header>
 
-    <main id="main">
-      <section class="hero section-block" id="home" data-section>
-        <div class="hero-content reveal immediate">
-          <div class="terminal-label">
-            <span class="pulse-dot"></span>
-            <span data-i18n="hero.eyebrow">identity layer / cyber intelligence builder</span>
-          </div>
+    <div class="command-palette" aria-hidden="true">
+      <button class="command-close" type="button" aria-label="Close command palette">×</button>
+      <p>JUMP TO SIGNAL</p>
+      <a href="#development"><span>01</span> DEVELOPMENT</a>
+      <a href="#constellation"><span>02</span> STARS / SCARS</a>
+      <a href="#projects"><span>03</span> PUBLIC BUILDS</a>
+      <a href="https://github.com/xtufa7" target="_blank" rel="noreferrer"><span>04</span> GITHUB ↗</a>
+      <small>PRESS ESC TO CLOSE</small>
+    </div>
 
-          <h1>0xtufa7</h1>
-
-          <p class="hero-subtitle" data-i18n="hero.subtitle">
-            Cyber Intelligence • OSINT • Network Security Analysis • Defensive & Regulatory Monitoring
-          </p>
-
-          <p class="hero-text" data-i18n="hero.text">
-            I build systems that turn raw network, DNS, device, and open-source signals into structured intelligence:
-            context, behavior, risk, and control. The goal is not to drown in logs. The goal is to understand what is
-            happening and why it matters.
-          </p>
-
-          <div class="hero-actions" aria-label="Primary actions">
-            <a class="button button-primary" href="#godeye">
-              <span class="button-icon" data-icon="projects"></span>
-              <span data-i18n="buttons.projects">View Projects</span>
-            </a>
-            <a class="button" href="#osint">
-              <span class="button-icon" data-icon="radar"></span>
-              <span data-i18n="buttons.osint">OSINT Profile</span>
-            </a>
-            <a class="button" href="https://github.com/xtufa7" target="_blank" rel="noreferrer">
-              <span class="button-icon" data-icon="github"></span>
-              <span data-i18n="buttons.github">GitHub</span>
-            </a>
-            <a class="button" href="#contact">
-              <span class="button-icon" data-icon="mail"></span>
-              <span data-i18n="buttons.contact">Contact</span>
-            </a>
-          </div>
-
-          <div class="hero-intel-strip" data-intel-strip></div>
-        </div>
-
-        <div class="hero-visual reveal immediate" aria-label="Animated cyber intelligence radar">
-          <div class="visual-frame">
-            <canvas id="radarCanvas" width="560" height="560"></canvas>
-            <div class="eye-core" aria-hidden="true">
-              <div class="eye-outline"></div>
-              <div class="eye-pupil"></div>
-              <div class="eye-crosshair"></div>
-              <div class="scan-line"></div>
-            </div>
-            <div class="visual-readouts" aria-hidden="true">
-              <span data-i18n="readouts.dns">DNS SIG / LIVE</span>
-              <span data-i18n="readouts.osint">OSINT MAP / ACTIVE</span>
-              <span data-i18n="readouts.ai">AI RELAY / READY</span>
-            </div>
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <canvas id="signal-canvas" aria-hidden="true"></canvas>
+        <div class="hero__spotlight" aria-hidden="true"></div>
+        <div class="hero__visual" aria-hidden="true">
+          <img src="assets/lain-signal-hero.webp" alt="" class="hero__image" />
+          <div class="head-system">
+            <div class="head-ring head-ring--1"><i></i><i></i><i></i></div>
+            <div class="head-ring head-ring--2"><span>01</span><span>07</span><span>3.0</span><span>LIVE</span></div>
+            <div class="head-ring head-ring--3"></div>
+            <div class="head-cross head-cross--x"></div>
+            <div class="head-cross head-cross--y"></div>
+            <div class="orbit-glyph orbit-glyph--a">✦</div>
+            <div class="orbit-glyph orbit-glyph--b">⌁</div>
+            <div class="orbit-glyph orbit-glyph--c">+</div>
           </div>
         </div>
-      </section>
 
-      <section class="section-block" id="about" data-section>
-        <div class="section-heading">
-          <span class="eyebrow" data-i18n="about.eyebrow">profile</span>
-          <h2 data-i18n="about.title">About 0xtufa7</h2>
-        </div>
+        <div class="hero__content">
+          <p class="eyebrow reveal">VERSION 3.0 <i></i> FULL-STACK SYSTEMS <i></i> RIYADH / ONLINE</p>
+          <h1 class="hero__title" id="hero-title">
+            <span class="reveal">THE NETWORK</span>
+            <span class="hero__title-italic reveal">REMEMBERS</span>
+            <span class="hero__title-outline reveal" data-text="TUFA7.">TUFA7.</span>
+          </h1>
 
-        <div class="about-grid reveal">
-          <div class="copy-panel">
-            <p data-i18n="about.p1">
-              I focus on cyber intelligence, OSINT, network behavior analysis, defensive security, and regulatory-style
-              monitoring. My strongest angle is analysis: connecting technical signals to behavior, risk, identity, and
-              practical decisions.
-            </p>
-            <p data-i18n="about.p2">
-              I work across DNS visibility, device activity, domain classification, monitoring dashboards, AI-assisted
-              interpretation, and controlled access systems. I treat logs as evidence streams, not just technical records.
-            </p>
-            <p data-i18n="about.p3">
-              I also bring a visual editing background into the way I design interfaces. Cyber dashboards should be fast,
-              sharp, readable, and cinematic without becoming childish or fake.
-            </p>
+          <div class="hero__bottom reveal">
+            <div class="hero__actions">
+              <a class="button button--light magnetic" href="#development"><span>SEE THE BUILD</span><b>↘</b></a>
+              <a class="button magnetic" href="https://github.com/xtufa7" target="_blank" rel="noreferrer"><span>GITHUB / XTUFA7</span><b>↗</b></a>
+            </div>
+            <p class="hero__manifesto">I BUILD SYSTEMS THAT TURN<br />RAW SIGNALS INTO <em>DECISIONS.</em></p>
           </div>
-
-          <aside class="signal-panel" aria-label="Profile signals">
-            <div>
-              <span class="metric-value">OSINT</span>
-              <span class="metric-label" data-i18n="metrics.osint">open-source intelligence</span>
-            </div>
-            <div>
-              <span class="metric-value">DNS</span>
-              <span class="metric-label" data-i18n="metrics.dns">network behavior layer</span>
-            </div>
-            <div>
-              <span class="metric-value">AI</span>
-              <span class="metric-label" data-i18n="metrics.ai">analysis accelerator</span>
-            </div>
-            <div>
-              <span class="metric-value">4Y</span>
-              <span class="metric-label" data-i18n="metrics.edit">motion editing experience</span>
-            </div>
-          </aside>
         </div>
+
+        <aside class="hero__telemetry" aria-label="Live interface telemetry">
+          <div><span>POINTER</span><b id="pointer-coords">000 / 000</b></div>
+          <div><span>PACKETS</span><b class="packet-count">001284</b></div>
+          <div><span>NODE</span><b>0x07 / ACTIVE</b></div>
+        </aside>
+
+        <div class="hero__question">WHY ARE U CRYING TUFA7?</div>
+        <div class="scroll-cue"><span>SCROLL TO ENTER</span><i></i></div>
       </section>
 
-      <section class="section-block" id="osint" data-section>
-        <div class="section-heading">
-          <span class="eyebrow" data-i18n="osint.eyebrow">intelligence discipline</span>
-          <h2 data-i18n="osint.title">OSINT & Network Intelligence</h2>
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker__track">
+          <span>BUILD THE SIGNAL</span><i>✦</i><span>READ THE BEHAVIOR</span><i>✦</i><span>SHIP THE SYSTEM</span><i>✦</i><span>OWN THE STACK</span><i>✦</i>
+          <span>BUILD THE SIGNAL</span><i>✦</i><span>READ THE BEHAVIOR</span><i>✦</i><span>SHIP THE SYSTEM</span><i>✦</i><span>OWN THE STACK</span><i>✦</i>
         </div>
+      </div>
 
-        <div class="card-grid reveal" data-osint></div>
-      </section>
-
-      <section class="section-block" id="security" data-section>
-        <div class="section-heading">
-          <span class="eyebrow" data-i18n="security.eyebrow">security posture</span>
-          <h2 data-i18n="security.title">Analytical Security, Defensive Control</h2>
-        </div>
-
-        <div class="security-layout reveal">
-          <article class="copy-panel accent-panel">
-            <h3 data-i18n="security.cardTitle">Balanced Security Thinking</h3>
-            <p data-i18n="security.p1">
-              I use adversarial security thinking as a validation method: review exposure, test assumptions, and convert
-              findings into stronger monitoring, filtering, and control.
-            </p>
-            <p data-i18n="security.p2">
-              The core focus remains defensive and regulatory: visibility, policy-aware filtering, risk explanation,
-              network behavior baselines, and systems that make suspicious activity easier to understand.
-            </p>
-          </article>
-
-          <div class="ops-grid" data-security></div>
-        </div>
-      </section>
-
-      <section class="section-block flagship" id="godeye" data-section>
-        <div class="section-heading">
-          <span class="eyebrow" data-i18n="godeye.eyebrow">flagship project</span>
-          <h2>GodEye Ecosystem</h2>
-        </div>
-
-        <div class="project-layout reveal">
-          <article class="project-card">
-            <div class="project-card-top">
-              <span class="status-badge warning" data-i18n="godeye.status">Private / In development</span>
-              <span class="status-badge" data-i18n="godeye.role">Founder & Builder</span>
-              <span class="status-badge" data-i18n="godeye.category">Cyber Intelligence / DNS Monitoring / AI Security</span>
-            </div>
-
-            <h3 data-i18n="godeye.title">GodEye Ecosystem</h3>
-            <p data-i18n="godeye.description">
-              GodEye is a private project focused on DNS and device intelligence. It is built around NextDNS logs and
-              designed to make them easier to understand: what happened, which device was involved, and whether the
-              activity was normal, background, or worth attention.
-            </p>
-            <p class="muted-note" data-i18n="godeye.note">
-              Private / In development. Public documentation and repository access will be published when the system is
-              ready.
-            </p>
-          </article>
-
-          <div class="feature-matrix" data-godeye-features></div>
-        </div>
-      </section>
-
-      <section class="section-block" id="future" data-section>
-        <div class="section-heading">
-          <span class="eyebrow" data-i18n="future.eyebrow">future build</span>
-          <h2 data-i18n="future.title">Full Mobile Oversight System</h2>
-        </div>
-
-        <div class="future-panel reveal">
+      <section class="signal-section section" id="signal">
+        <div class="section-index reveal"><span>01 / SIGNAL</span><span>INTERACTIVE INTELLIGENCE LAYER</span></div>
+        <div class="signal-heading">
           <div>
-            <h3 data-i18n="future.cardTitle">Privacy-aware mobile supervision and security monitoring</h3>
-            <p data-i18n="future.description">
-              A future system concept for complete mobile visibility: device activity signals, network behavior, content
-              risk indicators, profile-based controls, alerting, and clean reporting. The direction is serious,
-              security-focused, and designed around responsible monitoring.
-            </p>
+            <p class="micro reveal">OBSERVE / CLASSIFY / EXPLAIN</p>
+            <h2 class="display-title reveal">I DON'T WATCH<br />THE NOISE.<br /><em>I READ IT.</em></h2>
           </div>
-          <div class="future-points" data-future></div>
+          <p class="signal-heading__copy reveal">Cyber intelligence is not a wall of logs. It is the ability to connect activity, infrastructure, identity, timing, and risk — then build a tool that makes the answer obvious.</p>
+        </div>
+
+        <div class="signal-cards">
+          <article class="signal-card tilt-card reveal" data-cursor="DRAG">
+            <div class="signal-card__top"><span>#01</span><i>LIVE</i></div>
+            <div class="signal-card__radar"><span></span><span></span><span></span><b>◎</b></div>
+            <h3>DNS<br />INTELLIGENCE</h3>
+            <p>Domains become behavior when device, timing, classification, and context meet.</p>
+            <small>NEXTDNS / SQLITE / SIGNAL TRIAGE</small>
+          </article>
+          <article class="signal-card signal-card--purple tilt-card reveal" data-cursor="DRAG">
+            <div class="signal-card__top"><span>#02</span><i>ACTIVE</i></div>
+            <div class="signal-card__mesh"><i></i><i></i><i></i><i></i><i></i></div>
+            <h3>OSINT<br />PIVOTS</h3>
+            <p>Public traces become investigative leads through careful connection and confidence.</p>
+            <small>IDENTITY / INFRASTRUCTURE / TIME</small>
+          </article>
+          <article class="signal-card tilt-card reveal" data-cursor="DRAG">
+            <div class="signal-card__top"><span>#03</span><i>LOCAL</i></div>
+            <div class="signal-card__waves"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <h3>DEFENSIVE<br />CONTROL</h3>
+            <p>Local-first monitoring that explains what changed, why it matters, and what comes next.</p>
+            <small>WINDOWS / LINUX / NO TELEMETRY</small>
+          </article>
         </div>
       </section>
 
-      <section class="section-block" id="creative" data-section>
-        <div class="section-heading">
-          <span class="eyebrow" data-i18n="creative.eyebrow">visual craft</span>
-          <h2 data-i18n="creative.title">Motion Editing Background</h2>
+      <section class="development-section section" id="development">
+        <div class="section-index reveal"><span>02 / DEVELOPMENT</span><span>BUILDER MODE / ENABLED</span></div>
+        <div class="dev-grid">
+          <div class="dev-copy">
+            <p class="micro reveal">FROM IDEA TO RUNNING SYSTEM</p>
+            <h2 class="display-title reveal">STRONG IN<br /><em>DEVELOPMENT.</em></h2>
+            <p class="dev-lede reveal">I design the interface, build the workflow, connect the APIs, shape the data, and keep the system fast enough to live with.</p>
+            <div class="dev-stats reveal">
+              <div><strong data-count="7">0</strong><span>CORE<br />TECHNOLOGIES</span></div>
+              <div><strong data-count="3">0</strong><span>PUBLIC<br />UTILITIES</span></div>
+              <div><strong data-count="6">0</strong><span>YEARS<br />VIDEO EDITING</span></div>
+            </div>
+          </div>
+
+          <div class="code-window reveal">
+            <div class="code-window__bar">
+              <span></span><span></span><span></span>
+              <b>tufa7.system / main</b>
+              <i>CONNECTED</i>
+            </div>
+            <div class="code-tabs" role="tablist" aria-label="Development workflow">
+              <button class="code-tab is-active" type="button" data-mode="build" role="tab" aria-selected="true">BUILD</button>
+              <button class="code-tab" type="button" data-mode="ship" role="tab" aria-selected="false">SHIP</button>
+              <button class="code-tab" type="button" data-mode="monitor" role="tab" aria-selected="false">MONITOR</button>
+            </div>
+            <pre class="code-output" aria-live="polite"><code></code></pre>
+            <div class="code-window__footer"><span>UTF-8</span><span>LOCAL-FIRST</span><span>0 ERRORS</span></div>
+          </div>
         </div>
 
-        <div class="creative-grid reveal" data-creative></div>
+        <div class="stack-rail reveal">
+          <span>JAVASCRIPT / TYPESCRIPT</span><span>PYTHON</span><span>POWERSHELL</span><span>.NET 8</span><span>NODE.JS</span><span>CLOUDFLARE WORKERS</span><span>SQLITE</span><span>REST APIS</span><span>WINDOWS + LINUX</span>
+        </div>
       </section>
 
-      <section class="section-block" id="opensource" data-section>
-        <div class="section-heading">
-          <span class="eyebrow" data-i18n="opensource.eyebrow">builder direction</span>
-          <h2 data-i18n="opensource.title">Open-Source Security Tools</h2>
-        </div>
+      <section class="video-section section" id="motion">
+        <div class="section-index reveal"><span>03 / VIDEO EDITOR</span><span>6 YEARS / MOTION + EDITING</span></div>
+        <div class="video-layout">
+          <div class="video-copy">
+            <p class="micro reveal">VIDEO EDITOR / SIX YEARS</p>
+            <h2 class="display-title reveal">MOTION HAS<br /><em>MEANING.</em></h2>
+            <p class="reveal">Six years as a video editor shaped the way I create: cinematic timing, precise sync, visual rhythm, compositing, impact, and clean storytelling.</p>
+            <div class="video-notes reveal"><span>VIDEO EDITOR / 6Y</span><span>AFTER EFFECTS + ALIGHT MOTION</span><span>MOTION / COMPOSITING / SYNC</span></div>
+          </div>
 
-        <div class="presence-panel reveal">
+          <div class="video-player reveal" data-cursor="PLAY">
+            <video id="feature-video" autoplay muted loop playsinline controls preload="metadata" poster="assets/lain-signal-hero.webp" data-source="assets/VID_20260430_014922_835.mp4"></video>
+            <div class="video-fallback">
+              <img src="assets/lain-signal-hero.webp" alt="Cyber anime signal artwork" />
+              <div class="video-fallback__scan"></div>
+              <p>VIDEO CHANNEL EMPTY</p>
+              <small>ADD <b>assets/VID_20260430_014922_835.mp4</b></small>
+            </div>
+            <div class="video-sound-control" aria-label="Video sound controls">
+              <button id="video-mute" type="button" aria-pressed="true">SOUND OFF</button>
+              <label for="video-volume">VIDEO</label>
+              <input id="video-volume" type="range" min="0" max="100" step="1" value="22" aria-label="Video volume" />
+              <output id="video-volume-value" for="video-volume">22%</output>
+            </div>
+            <button class="video-toggle magnetic" type="button" aria-label="Play video"><span>▶</span></button>
+            <div class="video-hud"><span>REC / 07</span><span>1920 × 1080</span><span>LOOP</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="constellation-section section" id="constellation">
+        <div class="section-index reveal"><span>04 / CONSTELLATION</span><span>AUDIO-REACTIVE WOUND STUDY</span></div>
+        <div class="constellation-heading">
           <div>
-            <span class="eyebrow" data-i18n="opensource.label">public utility mindset</span>
-            <h3 data-i18n="opensource.cardTitle">Tools that help analysts move faster</h3>
-            <p data-i18n="opensource.description">
-              I am building toward open-source tools that support cybersecurity workflows: DNS triage, domain
-              classification, log interpretation, network visibility, OSINT pivots, and clean reporting.
-            </p>
+            <p class="micro reveal">FULL-STACK / WEB DEVELOPMENT</p>
+            <h2 class="display-title reveal">I CONNECT<br />EVERY <em>LAYER.</em></h2>
+            <p class="constellation-heading__copy reveal">From responsive interfaces and motion systems to backend logic, APIs, deployment, and data — I build complete web experiences from end to end.</p>
           </div>
-          <div class="presence-actions">
-            <a class="button button-primary" href="https://github.com/xtufa7" target="_blank" rel="noreferrer">
-              <span class="button-icon" data-icon="github"></span>
-              <span data-i18n="buttons.githubProfile">GitHub Profile</span>
-            </a>
+          <div class="audio-control reveal">
+            <audio id="cardigan-audio" preload="metadata" data-source="assets/cardigan-from-00-16.m4a"></audio>
+            <div class="audio-actions">
+              <button id="audio-toggle" class="button button--light magnetic" type="button"><span>PLAY SONG</span><b>▶</b></button>
+              <button id="audio-replay" class="button magnetic" type="button"><span>REPLAY 00:16</span><b>↻</b></button>
+            </div>
+            <div class="audio-volume-control" aria-label="Song sound controls">
+              <button id="audio-mute" type="button" aria-pressed="false">MUTE</button>
+              <label for="audio-volume">SONG</label>
+              <input id="audio-volume" type="range" min="0" max="100" step="1" value="28" aria-label="Song volume" />
+              <output id="audio-volume-value" for="audio-volume">28%</output>
+            </div>
+            <div class="audio-meta"><span id="audio-mode">CARDIGAN / CHECKING FILE</span><span id="audio-time">00:16 / --:--</span></div>
+            <div class="audio-progress"><i></i></div>
           </div>
         </div>
-      </section>
 
-      <section class="section-block" id="stack" data-section>
-        <div class="section-heading">
-          <span class="eyebrow" data-i18n="stack.eyebrow">technical surface</span>
-          <h2 data-i18n="stack.title">Technical Stack</h2>
-        </div>
-
-        <div class="stack-grid reveal" data-stack></div>
-      </section>
-
-      <section class="section-block philosophy" id="philosophy" data-section>
-        <div class="section-heading">
-          <span class="eyebrow" data-i18n="philosophy.eyebrow">operating model</span>
-          <h2 data-i18n="philosophy.title">How I Think</h2>
-        </div>
-
-        <div class="philosophy-grid reveal">
-          <div class="copy-panel">
-            <p data-i18n="philosophy.text">
-              Logs alone are not intelligence. Intelligence begins when raw events are connected to context, timing,
-              identity, behavior, and risk. The best systems do more than show data: they explain what changed, why it
-              matters, and what should be watched next.
-            </p>
+        <div class="wound-stage reveal" id="wound-stage" data-phase="idle" data-cursor="DRAW">
+          <div class="wound-stage__pulse"></div>
+          <svg class="wound-svg" viewBox="0 0 1200 620" role="img" aria-label="Animated stars drawing around scars before they begin to bleed">
+            <defs>
+              <filter id="star-glow"><feGaussianBlur stdDeviation="5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              <linearGradient id="scar-gradient" x1="0" x2="1"><stop offset="0" stop-color="#6e318c"/><stop offset=".55" stop-color="#d7a7ff"/><stop offset="1" stop-color="#6e318c"/></linearGradient>
+            </defs>
+            <path class="body-line" d="M450 73 C520 120 500 224 475 298 C448 381 454 501 518 575 M750 73 C680 120 700 224 725 298 C752 381 746 501 682 575" />
+            <path class="scar scar--1" d="M515 220 C548 238 571 236 599 214 C622 196 646 200 672 226" />
+            <path class="scar scar--2" d="M501 319 C539 298 579 316 604 349 C623 373 657 376 697 342" />
+            <path class="scar scar--3" d="M527 419 C560 397 587 405 611 435 C631 460 657 454 682 426" />
+            <g class="stars" filter="url(#star-glow)">
+              <path class="star star--1" d="M494 188 l6 15 16 2-12 10 4 16-14-8-14 8 4-16-12-10 16-2z" />
+              <path class="star star--2" d="M710 216 l5 12 13 2-10 8 3 13-11-7-11 7 3-13-10-8 13-2z" />
+              <path class="star star--3" d="M470 337 l7 17 18 2-14 12 4 18-15-9-16 9 5-18-14-12 18-2z" />
+              <path class="star star--4" d="M722 353 l7 17 18 2-14 12 4 18-15-9-16 9 5-18-14-12 18-2z" />
+              <path class="star star--5" d="M505 457 l5 13 14 1-11 9 4 14-12-8-12 8 4-14-11-9 14-1z" />
+              <path class="star star--6" d="M699 461 l5 13 14 1-11 9 4 14-12-8-12 8 4-14-11-9 14-1z" />
+            </g>
+            <g class="blood">
+              <path class="blood-line blood-line--1" d="M599 218 C598 269 604 302 597 355 C593 391 605 418 604 465" />
+              <path class="blood-line blood-line--2" d="M672 228 C677 262 668 285 673 323" />
+              <path class="blood-line blood-line--3" d="M527 421 C523 455 532 482 525 517" />
+              <circle class="drop drop--1" cx="604" cy="481" r="8" />
+              <circle class="drop drop--2" cx="673" cy="338" r="6" />
+              <circle class="drop drop--3" cx="525" cy="531" r="7" />
+            </g>
+          </svg>
+          <div class="lyric-sync" aria-live="polite">
+            <span data-cue="0">You drew</span>
+            <span data-cue="1">stars around</span>
+            <span data-cue="2">my scars</span>
+            <span data-cue="3">but now</span>
+            <span data-cue="4">I'm bleeding</span>
           </div>
-
-          <div class="approach-list" data-approach></div>
+          <div class="wound-stage__legend"><span><i></i> SCAR TRACE</span><span><i></i> STAR FIELD</span><span><i></i> BLOOD FLOW</span><b>CLICK THE FIELD TO DRAW</b></div>
         </div>
       </section>
 
-      <section class="section-block" id="roadmap" data-section>
-        <div class="section-heading">
-          <span class="eyebrow" data-i18n="roadmap.eyebrow">project trajectory</span>
-          <h2 data-i18n="roadmap.title">Roadmap</h2>
+      <section class="projects-section section" id="projects">
+        <div class="section-index reveal"><span>05 / BUILDS</span><span>PUBLIC + PRIVATE SYSTEMS</span></div>
+        <div class="projects-title-row">
+          <h2 class="display-title reveal">BUILT TO BE<br /><em>USED.</em></h2>
+          <a class="button magnetic reveal" href="https://github.com/xtufa7" target="_blank" rel="noreferrer"><span>ALL REPOSITORIES</span><b>↗</b></a>
         </div>
-
-        <div class="timeline reveal" data-roadmap></div>
+        <div class="project-grid">
+          <a class="project-card project-card--wide tilt-card reveal" href="https://github.com/xtufa7/LayFix" target="_blank" rel="noreferrer" data-cursor="OPEN">
+            <div class="project-card__meta"><span>01 / PUBLIC</span><span>.NET 8 / LOCAL</span></div>
+            <h3>LAYFIX</h3>
+            <p>Fix accidental Arabic and English keyboard layouts directly inside selected text. No cloud. No telemetry.</p>
+            <div class="project-card__visual project-card__visual--keys"><i>ض</i><i>Q</i><i>ص</i><i>W</i><i>ث</i><i>E</i></div>
+            <b class="project-card__arrow">↗</b>
+          </a>
+          <a class="project-card tilt-card reveal" href="https://github.com/xtufa7/LiteBar" target="_blank" rel="noreferrer" data-cursor="OPEN">
+            <div class="project-card__meta"><span>02 / PUBLIC</span><span>WINDOWS</span></div>
+            <h3>LITEBAR</h3>
+            <p>Compact workflow controls that stay fast and out of the way.</p>
+            <div class="project-card__visual project-card__visual--bolt">ϟ</div>
+            <b class="project-card__arrow">↗</b>
+          </a>
+          <a class="project-card tilt-card reveal" href="https://github.com/xtufa7/onion-domain-generator" target="_blank" rel="noreferrer" data-cursor="OPEN">
+            <div class="project-card__meta"><span>03 / PUBLIC</span><span>TOR / LINUX</span></div>
+            <h3>ONION</h3>
+            <p>A beginner-friendly hidden service guide with operational safety notes.</p>
+            <div class="project-card__visual project-card__visual--onion"><i></i><i></i><i></i></div>
+            <b class="project-card__arrow">↗</b>
+          </a>
+          <article class="project-card project-card--private tilt-card reveal" data-cursor="LOCKED">
+            <div class="project-card__meta"><span>04 / PRIVATE</span><span>IN DEVELOPMENT</span></div>
+            <h3>GODEYE</h3>
+            <p>DNS and device intelligence built around behavior, evidence, context, and focused signal triage.</p>
+            <div class="project-card__visual project-card__visual--eye"><i></i><span>07</span></div>
+            <b class="project-card__arrow">◉</b>
+          </article>
+        </div>
       </section>
 
-      <section class="section-block" id="contact" data-section>
-        <div class="section-heading">
-          <span class="eyebrow" data-i18n="contact.eyebrow">contact surface</span>
-          <h2 data-i18n="contact.title">Contact</h2>
+      <section class="outro">
+        <div class="outro__rings" aria-hidden="true"><i></i><i></i><i></i></div>
+        <p class="micro reveal">END OF LINE / START OF SIGNAL</p>
+        <h2 class="reveal">MAKE IT<br /><em>HIT HARDER.</em></h2>
+        <div class="outro__links reveal">
+          <a class="magnetic" href="https://github.com/xtufa7" target="_blank" rel="noreferrer">GITHUB ↗</a>
+          <a class="magnetic" href="mailto:tufa7shaml@gmail.com">EMAIL ↗</a>
+          <a class="magnetic" href="https://x.com/0xtufa7" target="_blank" rel="noreferrer">X ↗</a>
         </div>
-
-        <div class="contact-grid reveal" data-contact></div>
+        <small>WHY ARE U CRYING TUFA7?</small>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <p data-i18n="footer.built">Built by 0xtufa7</p>
-      <p data-i18n="footer.tagline">Cyber Intelligence • OSINT • Defensive Monitoring • AI Security Systems</p>
+    <footer>
+      <p>© <span id="year"></span> 0xTUFA7 / VERSION 3.0</p>
+      <p>DESIGN × CODE × SIGNAL <i>•</i> RIYADH</p>
     </footer>
-
-    <script src="script.js" defer></script>
   </body>
 </html>
