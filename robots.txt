@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://xtufa7.github.io/sitemap.xml

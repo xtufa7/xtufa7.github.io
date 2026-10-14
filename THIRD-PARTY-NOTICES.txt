@@ -1,0 +1,56 @@
+Media notices for Nour Al-Shammari / 0xTuFa7 portfolio v4.2.3
+
+University of Hail aerial and engineering-building photos:
+Photographer: Annurios
+CC BY-SA 4.0: https://creativecommons.org/licenses/by-sa/4.0/
+Sources:
+https://commons.wikimedia.org/wiki/File:صورة_جوية_لجامعة_حائل.jpg
+https://commons.wikimedia.org/wiki/File:مبنى_كلية_الهندسة.jpg
+Changes: JPEG converted to WebP, cropped in layout
+The derived photo assets retain CC BY-SA 4.0
+
+Saudi flag sky video:
+https://videos.pexels.com/video-files/4607633/4607633-hd_1280_720_30fps.mp4
+Pexels license: https://www.pexels.com/license/
+Modified: audio removed, optimized and loop crossfaded, poster extracted
+
+Noto Sans Arabic variable font, Latin/Arabic subsets:
+SIL Open Font License 1.1, full notice in fonts/LICENSE-Noto.txt
+
+Language flag artwork, public-domain national flags:
+https://commons.wikimedia.org/wiki/File:Flag_of_the_United_Kingdom.svg
+https://commons.wikimedia.org/wiki/File:Flag_of_Saudi_Arabia.svg
+Four-point star: original SVG drawing for this portfolio
+
+PATTERON captures and selected video edit:
+Supplied owner's project and portfolio assets, expressly requested for this portfolio
+Project development-build name: NEUROWEAVE
+Three actual recordings from an isolated project copy using its example curriculum
+No changes to the original project's persistent state
+No ownership of third-party footage/music in the existing edit is newly asserted
+
+
+Software icon sources and rights:
+After Effects
+https://commons.wikimedia.org/wiki/File:Adobe_After_Effects_CC_icon.svg
+Adobe Inc. / VulcanSphere; Wikimedia Commons lists PD-textlogo and CC BY-SA 4.0; unmodified SVG, trademark rights retained
+
+Alight Motion
+https://apps.apple.com/us/app/alight-motion/id1459833443?uo=4
+Official App Store listing artwork, displayed only to identify the named software; rights remain with the owner
+
+Blurrr-Music video editor
+https://apps.apple.com/us/app/blurrr-music-video-editor/id1591007143?uo=4
+Official App Store listing artwork, displayed only to identify the named software; rights remain with the owner
+
+Video Star
+https://apps.apple.com/us/app/video-star/id438596432?uo=4
+Official App Store listing artwork, displayed only to identify the named software; rights remain with the owner
+
+
+
+
+NØVA repository screenshots
+Owner: xtufa7 / Nour Al-Shammari
+https://github.com/xtufa7/NOVA-New-Tab/tree/main/docs/images
+Used by owner authorization for this portfolio; source-available proprietary project, not an open-source license. Converted to WebP.
